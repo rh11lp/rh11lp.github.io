@@ -18,8 +18,7 @@
 		// why draw when you can talk?
 		showResult();
 	}
-	function showResult()
-	{	console.log(myRec.resultValue);
+	function showResult() {	
 		if(myRec.resultValue==true) {
 			background(192, 255, 192);
 			text(myRec.resultString, width/2, height/2);

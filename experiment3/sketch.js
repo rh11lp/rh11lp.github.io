@@ -1,4 +1,7 @@
-	var myRec = new p5.SpeechRec(); // new P5.SpeechRec object
+var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
+	myRec.continuous = true; // do continuous recognition
+	myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+
 	function setup()
 	{
 		// graphics stuff:
@@ -9,8 +12,6 @@
 		textSize(32);
 		textAlign(CENTER);
 		text("say something", width/2, height/2);
-		myRec.onResult = showResult;
-		myRec.continuous = true;
 		myRec.start();
 		console.log(myRec);
 	}
@@ -22,6 +23,7 @@
 		if(myRec.resultValue==true) {
 			background(192, 255, 192);
 			text(myRec.resultString, width/2, height/2);
-			console.log(myRec.resultString);
+			var mostrecentword = myRec.resultString.split(' ').pop();
+			console.log(mostrecentword);
 		}
 	}

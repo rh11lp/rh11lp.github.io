@@ -10,13 +10,13 @@
 		textAlign(CENTER);
 		text("say something", width/2, height/2);
 		myRec.onResult = showResult;
+		myRec.continuous = true;
 		myRec.start();
 		console.log(myRec);
 	}
 	function draw()
 	{
 		// why draw when you can talk?
-		showResult();
 	}
 	function showResult() {
 		if(myRec.resultValue==true) {

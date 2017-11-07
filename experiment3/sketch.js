@@ -20,6 +20,7 @@ var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
 		// why draw when you can talk?
 	}
 	function parseResult() {
+		console.log(myRec.resultValue);
 		if(myRec.resultValue==true) {
 			background(192, 255, 192);
 			text(myRec.resultString, width/2, height/2);

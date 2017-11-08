@@ -5,7 +5,7 @@
 
 	var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
 	myRec.continuous = true; // do continuous recognition
-	myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+	myRec.interimResults = false; // allow partial recognition (faster, less accurate)
 	var x, y;
 	var dx, dy;
 	function setup()

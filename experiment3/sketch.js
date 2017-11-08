@@ -41,5 +41,6 @@
 	 	text(myRec.resultString, width/2, height/2);
 	 	console.log(myRec.resultString);
 	  console.log(myRec);
+		myRec.start();
 	 }
 	}

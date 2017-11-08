@@ -3,44 +3,49 @@
 	var inData;                            // for incoming serial data
 	var outByte = 0;                       // for outgoing data
 
-	 var myRec = new p5.SpeechRec(); // speech recognition object (will prompt for mic access)
-
-	function setup() {
-	 createCanvas(400, 300);          // make the canvas
-	 myRec.onResult = showResult;
-	 myRec.start();
-	 // serial = new p5.SerialPort();    // make a new instance of the serialport library
-	 // serial.on('data', serialEvent);  // callback for when new data arrives
-	 // serial.on('error', serialError); // callback for errors
-	 // serial.open(portName);           // open a serial port
+	var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
+	myRec.continuous = true; // do continuous recognition
+	myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+	var x, y;
+	var dx, dy;
+	function setup()
+	{
+		// graphics stuff:
+		createCanvas(800, 600);
+		background(255, 255, 255);
+		fill(0, 0, 0, 255);
+		x = width/2;
+		y = height/2;
+		dx = 0;
+		dy = 0;
+		// instructions:
+		textSize(20);
+		textAlign(LEFT);
+		text("draw: up, down, left, right, clear", 20, 20);
+		//myRec.onResult = parseResult; // now in the constructor
+		myRec.start(); // start engine
+		console.log(myRec);
 	}
-
-	function serialEvent() {
-	 // read a byte from the serial port:
-	 var inByte = serial.read();
-	 // store it in a global variable:
-	 inData = inByte;
+	function draw()
+	{
+		ellipse(x, y, 5, 5);
+		x+=dx;
+		y+=dy;
+		if(x<0) x = width;
+		if(y<0) y = height;
+		if(x>width) x = 0;
+		if(y>height) y = 0;
 	}
-
-	function serialError(err) {
-	  println('Something went wrong with the serial port. ' + err);
-	}
-
-	function draw() {
-	 // black background, white text:
-	 // background(0);
-	 // fill(255);
-	 // display the incoming serial data as a string:
-	 //text("incoming value: " + inData, 30, 30);
-	}
-
-
-	function showResult() {
-	 if(myRec.resultValue==true) {
-	 	background(192, 255, 192);
-	 	text(myRec.resultString, width/2, height/2);
-	 	console.log(myRec.resultString);
-	  console.log(myRec);
-		myRec.start();
-	 }
+	function parseResult()
+	{
+		console.log("parsing results");
+		// recognition system will often append words into phrases.
+		// so hack here is to only use the last word:
+		var mostrecentword = myRec.resultString.split(' ').pop();
+		if(mostrecentword.indexOf("left")!==-1) { dx=-1;dy=0; }
+		else if(mostrecentword.indexOf("right")!==-1) { dx=1;dy=0; }
+		else if(mostrecentword.indexOf("up")!==-1) { dx=0;dy=-1; }
+		else if(mostrecentword.indexOf("down")!==-1) { dx=0;dy=1; }
+		else if(mostrecentword.indexOf("clear")!==-1) { background(255); }
+		console.log(mostrecentword);
 	}

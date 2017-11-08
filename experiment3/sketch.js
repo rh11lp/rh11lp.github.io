@@ -32,6 +32,7 @@ function draw() {
 
 
 function showResult() {
+  console.log("Showing results");
  if(myRec.resultValue==true) {
    background(192, 255, 192);
    text(myRec.resultString, width/2, height/2);

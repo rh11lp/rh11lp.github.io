@@ -17,7 +17,7 @@ function setup() {
 
 function serialEvent() {
   inData = Number(serial.read());
-  console.log(inData);
+  console.log("indata", inData);
   if(inData ==1){
     restartRec();
   }
@@ -28,24 +28,18 @@ function serialError(err) {
 }
 
 function draw() {
- // black background, white text:
- // background(0);
- // fill(255);
- // display the incoming serial data as a string:
- // text("incoming value: " + inData, 30, 30);
 }
 
 
 function showResult() {
   console.log("Showing results");
  if(myRec.resultValue==true) {
-
    console.log(myRec.resultString)
    if(myRec.resultString.search("Roxanne")>-1){
      // send it out the serial port:
      var outByte = byte(1);
      serial.write(outByte);
-     console.log("hey yo it's you")
+     console.log("hey yo it's you");
 
     background(192, 255, 192);
     text(myRec.resultString, width/2, height/2);

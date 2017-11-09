@@ -7,7 +7,6 @@ var inData;                            // for incoming serial data
 function setup() {
  createCanvas(400, 300);          // make the canvas
  myRec.onResult = showResult;
- myRec.onEnd = restartRec;
  myRec.start();
  serial = new p5.SerialPort();    // make a new instance of the serialport library
  serial.on('data', serialEvent);  // callback for when new data arrives
@@ -19,7 +18,11 @@ function serialEvent() {
   inData = Number(serial.read());
   console.log("indata", inData);
   if(inData ==1){
-    restartRec();
+    console.log('restarting rec');
+    myRec = new p5.SpeechRec();
+    myRec.onResult = showResult;
+    myRec.onEnd = restartRec;
+    myRec.start();
   }
 }
 
@@ -45,17 +48,8 @@ function showResult() {
     text(myRec.resultString, width/2, height/2);
    }else{
      console.log("not Roxanne");
-     restartRec();
    }
 
 
  }
-}
-
-function restartRec(){
-  console.log('restarting rec');
-  myRec = new p5.SpeechRec();
-  myRec.onResult = showResult;
-  myRec.onEnd = restartRec;
-  myRec.start();
 }

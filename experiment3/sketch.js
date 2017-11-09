@@ -24,7 +24,7 @@ function serialEvent() {
 }
 
 function serialError(err) {
-  println('Something went wrong with the serial port. ' + err);
+  console.log('Something went wrong with the serial port. ', err);
 }
 
 function draw() {
@@ -46,18 +46,20 @@ function showResult() {
      var outByte = byte(1);
      serial.write(outByte);
      console.log("hey yo it's you")
+
+    background(192, 255, 192);
+    text(myRec.resultString, width/2, height/2);
    }else{
-     console.log("no value");
+     console.log("not Roxanne");
      restartRec();
    }
 
-   background(192, 255, 192);
-   text(myRec.resultString, width/2, height/2);
 
  }
 }
 
 function restartRec(){
+  console.log('restarting rec');
   myRec = new p5.SpeechRec();
   myRec.onResult = showResult;
   myRec.onEnd = restartRec;

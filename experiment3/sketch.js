@@ -1,5 +1,5 @@
 var serial;          // variable to hold an instance of the serialport library
-var portName = 'COM3'; // fill in your serial port name here
+var portName = 'COM5'; // fill in your serial port name here
 var inData;                            // for incoming serial data
 
  var myRec = new p5.SpeechRec(); // speech recognition object (will prompt for mic access)
@@ -8,10 +8,10 @@ function setup() {
  createCanvas(400, 300);          // make the canvas
  myRec.onResult = showResult;
  myRec.start();
- // serial = new p5.SerialPort();    // make a new instance of the serialport library
- // serial.on('data', serialEvent);  // callback for when new data arrives
- // serial.on('error', serialError); // callback for errors
- // serial.open(portName);           // open a serial port
+ serial = new p5.SerialPort();    // make a new instance of the serialport library
+ serial.on('data', serialEvent);  // callback for when new data arrives
+ serial.on('error', serialError); // callback for errors
+ serial.open(portName);           // open a serial port
 }
 
 function serialEvent() {

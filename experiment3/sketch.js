@@ -36,7 +36,7 @@ function showResult() {
  if(myRec.resultValue==true) {
 
    console.log(myRec.resultString)
-   if(myRec.resultString == 'Roxanne'){
+   if(myRec.resultString.search("Roxanne")>-1){
      // send it out the serial port:
      var outByte = byte(1);
      serial.write(outByte);

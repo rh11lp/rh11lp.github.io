@@ -22,7 +22,7 @@ function serialEvent() {
     console.log('restarting rec');
     myRec = new p5.SpeechRec();
     myRec.onResult = showResult;
-    myRec.onEnd = restartRec;
+    myRec.onEnd = printSomething;
     myRec.start();
   }
 }

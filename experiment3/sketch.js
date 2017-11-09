@@ -15,7 +15,13 @@ function setup() {
 }
 
 function serialEvent() {
-  inData = serial.read();
+  inData = Number(serial.read());
+  console.log(inData);
+  if(inData ==1){
+    myRec = new p5.SpeechRec();
+    myRec.onResult = showResult;
+    myRec.start();
+  }
 }
 
 function serialError(err) {

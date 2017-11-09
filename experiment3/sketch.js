@@ -16,7 +16,6 @@ function setup() {
 
 function serialEvent() {
   inData = serial.read();
-  console.log(inData);
 }
 
 function serialError(err) {

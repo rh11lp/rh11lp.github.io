@@ -7,7 +7,7 @@ var inData;                            // for incoming serial data
 function setup() {
  createCanvas(400, 300);          // make the canvas
  myRec.onResult = showResult;
- myRec.onEnd = function (){console.log("ending");};
+ myRec.onEnd = printSomething;
  myRec.start();
  serial = new p5.SerialPort();    // make a new instance of the serialport library
  serial.on('data', serialEvent);  // callback for when new data arrives
@@ -53,4 +53,8 @@ function showResult() {
 
 
  }
+}
+
+function printSomething(){
+   console.log("ending");
 }

@@ -57,4 +57,5 @@ function showResult() {
 
 function printSomething(){
    console.log("ending");
+   myRec.start();
 }

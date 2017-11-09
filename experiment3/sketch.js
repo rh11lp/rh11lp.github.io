@@ -7,6 +7,7 @@ var inData;                            // for incoming serial data
 function setup() {
  createCanvas(400, 300);          // make the canvas
  myRec.onResult = showResult;
+ myRec.onEnd = restartRec;
  myRec.start();
  serial = new p5.SerialPort();    // make a new instance of the serialport library
  serial.on('data', serialEvent);  // callback for when new data arrives
@@ -18,9 +19,7 @@ function serialEvent() {
   inData = Number(serial.read());
   console.log(inData);
   if(inData ==1){
-    myRec = new p5.SpeechRec();
-    myRec.onResult = showResult;
-    myRec.start();
+    restartRec();
   }
 }
 
@@ -47,15 +46,20 @@ function showResult() {
      var outByte = byte(1);
      serial.write(outByte);
      console.log("hey yo it's you")
+   }else{
+     console.log("no value");
+     restartRec();
    }
 
    background(192, 255, 192);
    text(myRec.resultString, width/2, height/2);
 
  }
- else{
-   console.log("if we're entering this i swear to god");
-   var outByte = byte(0);
-   serial.write(outByte);
- }
+}
+
+function restartRec(){
+  myRec = new p5.SpeechRec();
+  myRec.onResult = showResult;
+  myRec.onEnd = restartRec;
+  myRec.start();
 }

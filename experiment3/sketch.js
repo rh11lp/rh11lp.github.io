@@ -34,12 +34,15 @@ function draw() {
 function showResult() {
   console.log("Showing results");
  if(myRec.resultValue==true) {
+   console.log("really? we should have a value here");
    background(192, 255, 192);
    text(myRec.resultString, width/2, height/2);
    // send it out the serial port:
    var outByte = byte(1);
    serial.write(outByte);
- }else{
+ }
+ else{
+   console.log("if we're entering this i swear to god");
    var outByte = byte(0);
    serial.write(outByte);
  }

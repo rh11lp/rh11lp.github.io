@@ -41,7 +41,7 @@ function showResult() {
    console.log(myRec.resultString)
    if(myRec.resultString.search("Roxanne")>-1){
      // send it out the serial port:
-     var outByte = byte(1);
+     var outByte = byte(3); //3 to not pretend to be 1
      serial.write(outByte);
      console.log("hey yo it's you");
 

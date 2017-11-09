@@ -17,14 +17,6 @@ function setup() {
 
 function serialEvent() {
   inData = Number(serial.read());
-  console.log("indata", inData);
-  if(inData ==1){
-    console.log('restarting rec');
-    myRec = new p5.SpeechRec();
-    myRec.onResult = showResult;
-    myRec.onEnd = printSomething;
-    myRec.start();
-  }
 }
 
 function serialError(err) {

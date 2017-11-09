@@ -36,7 +36,11 @@ function showResult() {
  if(myRec.resultValue==true) {
    background(192, 255, 192);
    text(myRec.resultString, width/2, height/2);
-   console.log(myRec.resultString);
-  myRec.stop();
+   // send it out the serial port:
+   var outByte = byte(1);
+   serial.write(outByte);
+ }else{
+   var outByte = byte(0);
+   serial.write(outByte);
  }
 }

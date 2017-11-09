@@ -35,11 +35,12 @@ function showResult() {
   console.log("Showing results");
  if(myRec.resultValue==true) {
 
+   console.log(myRec.resultString)
    if(myRec.resultString == 'Roxanne'){
      // send it out the serial port:
      var outByte = byte(1);
      serial.write(outByte);
-
+     console.log("hey yo it's you")
    }
 
    background(192, 255, 192);

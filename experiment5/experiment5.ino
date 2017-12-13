@@ -1,3 +1,13 @@
+/**********************************************
+ * Experiment 5                               *
+ * Kristy Boyce, Roxanne Henry, Emilia Mason  *
+ * DGIF 6037                                  *
+ * Kate Harman & Nick Puckett                 *
+ * Wednesday, December 13th 2017              *
+ **********************************************/
+
+
+
 /****************************************************************
 I2C_Gesture_Demo.ino
 XYZ Interactive ZX Sensor

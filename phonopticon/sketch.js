@@ -1,19 +1,21 @@
 var pubnubError = true;
-function preload() {
 
-  //PUBNUB SETUP
-  pubnub = new PubNub({
-      publishKey : 'pub-c-a210a34e-4b38-474e-8fe8-b70f0c0b2924',
-      subscribeKey : 'sub-c-84d87f80-fd57-11e7-8c23-76e4b319f7ff'
-  })
+function setup() {
 
-  console.log("Subscribing..");
-  pubnub.subscribe({
-      channels: ['Channel-5pibjxuoh']
-  });
+    //PUBNUB SETUP
+    pubnub = new PubNub({
+        publishKey : 'pub-c-a210a34e-4b38-474e-8fe8-b70f0c0b2924',
+        subscribeKey : 'sub-c-84d87f80-fd57-11e7-8c23-76e4b319f7ff'
+    })
 
-  // publish();
-  console.log("done setup")
+    console.log("Subscribing..");
+    pubnub.subscribe({
+        channels: ['Channel-5pibjxuoh']
+    });
+
+    // publish();
+    console.log("done setup");
+    
 }
 
 function draw() {

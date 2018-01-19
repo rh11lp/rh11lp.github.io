@@ -1,13 +1,13 @@
 // Examples use USGS Earthquake API:
 //   https://earthquake.usgs.gov/fdsnws/event/1/#methods
-var pubnub;
+var pubnub = true;
 function preload() {
   // Get the most recent earthquake in the database
   publish();
 }
 
 function draw() {
-  if (!pubnub) {
+  if (!pubnubError) {
     // Wait until the earthquake data has loaded before drawing.
     console.log('waiting...');
     return;
@@ -32,6 +32,7 @@ function publish() {
         }
         pubnub.publish(publishConfig, function(status, response) {
             console.log("status", status, "response", response);
+            pubnubError = status.error;
         })
     }
 

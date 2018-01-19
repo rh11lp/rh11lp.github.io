@@ -2,9 +2,11 @@ var pubnubError = true;
 function preload() {
   // Get the most recent earthquake in the database
   publish();
+  console.log("done setup")
 }
 
 function draw() {
+  console.log("Entering Draw... ... pubnub error?", pubnubError)
   if (!pubnubError) {
     // Wait until the earthquake data has loaded before drawing.
     console.log('waiting...');

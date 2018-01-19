@@ -31,7 +31,7 @@ function publish() {
             message : "Hello from PubNub Docs!"
         }
         pubnub.publish(publishConfig, function(status, response) {
-            console.log(status, response);
+            console.log("status", status, "response", response);
         })
     }
 

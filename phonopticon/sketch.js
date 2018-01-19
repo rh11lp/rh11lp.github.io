@@ -1,6 +1,4 @@
-// Examples use USGS Earthquake API:
-//   https://earthquake.usgs.gov/fdsnws/event/1/#methods
-var pubnub = true;
+var pubnubError = true;
 function preload() {
   // Get the most recent earthquake in the database
   publish();

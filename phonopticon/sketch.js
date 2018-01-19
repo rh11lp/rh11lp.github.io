@@ -1,60 +1,47 @@
 var pubnubError = true;
+var outResponse = {uuid: 0, response: ''};
+var inResponse = {uuid: 0, response: ''};
+var myUserID;
+var channelName = 'Channel-5pibjxuoh';
 
 function setup() {
 
-    //PUBNUB SETUP
-    pubnub = new PubNub({
-        publishKey : 'pub-c-a210a34e-4b38-474e-8fe8-b70f0c0b2924',
-        subscribeKey : 'sub-c-84d87f80-fd57-11e7-8c23-76e4b319f7ff'
-    })
-
-    console.log("Subscribing..");
-    pubnub.subscribe({
-        channels: ['Channel-5pibjxuoh']
+    // initialize pubnub
+    pubnub = PUBNUB.init({
+      publish_key   : 'pub-c-a210a34e-4b38-474e-8fe8-b70f0c0b2924',  //get these from the pubnub account online
+      subscribe_key : 'sub-c-84d87f80-fd57-11e7-8c23-76e4b319f7ff',
+      uuid: myUserID,
+      ssl: true  //enables a secure connection. This option has to be used if using the OCAD webspace
     });
+
+    pubnub.subscribe({
+        channel: channelName,
+        message: readIncoming
+    });
+
+    myUserID = PUBNUB.uuid();
 
     // publish();
     console.log("done setup");
-    
+
 }
 
 function draw() {
-  console.log("Entering Draw... ... pubnub error?", pubnubError)
-  if (!pubnubError) {
-    console.log('waiting...');
-    return;
-  }
 
   text('pubnub!', 0, height - 30, width, 30);
 
 }
 
 function publish() {
-
-    function publishSampleMessage() {
-        console.log("Since we're publishing on subscribe connectEvent, we're sure we'll receive the following publish.");
-        var publishConfig = {
-            channel : "Channel-5pibjxuoh",
-            message : "Hello from PubNub Docs!"
-        }
-        pubnub.publish(publishConfig, function(status, response) {
-            console.log("status", status, "response", response);
-            pubnubError = status.error;
-        })
-    }
+  pubnub.publish({
+    channel: channelName,
+    message: outResponse
+  });
 };
 
-
-// pubnub.addListener({
-//     status: function(statusEvent) {
-//         if (statusEvent.category === "PNConnectedCategory") {
-//             publishSampleMessage();
-//         }
-//     },
-//     message: function(message) {
-//         console.log("New Message!!", message);
-//     },
-//     presence: function(presenceEvent) {
-//         // handle presence
-//     }
-// })
+function readIncoming(message){ //when new data comes in it triggers this function,
+                                // this works becsuse we subscribed to the channel in setup()
+  if(message.userID == myUserID) {
+      inResponse = message;
+  }
+}

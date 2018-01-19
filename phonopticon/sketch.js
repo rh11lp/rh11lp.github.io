@@ -1,8 +1,9 @@
 var pubnubError = true;
+var myUserID;
 var outResponse = {uuid: 0, response: ''};
 var inResponse = {uuid: 0, response: ''};
-var myUserID;
 var channelName = 'Channel-5pibjxuoh';
+var startButton;
 
 function setup() {
 
@@ -21,18 +22,28 @@ function setup() {
 
     myUserID = PUBNUB.uuid();
 
-    // publish();
+    outResponse.uuid = myUserID;
+
+    //BUTTON SETUP
+    startButton = createButton('Start');
+    startButton.position(input.x + input.width, 65);
+    startButton.mousePressed(function(){
+      outResponse.message = "start"
+      publish();
+    });
+
     console.log("done setup");
 
 }
 
 function draw() {
 
-  text('pubnub!', 0, height - 30, width, 30);
+
 
 }
 
 function publish() {
+  console.log("publishing");
   pubnub.publish({
     channel: channelName,
     message: outResponse

@@ -26,7 +26,7 @@ function setup() {
 
     //BUTTON SETUP
     startButton = createButton('Start');
-    startButton.position(input.x + input.width, 65);
+    startButton.position(20, 65);
     startButton.mousePressed(function(){
       outResponse.message = "start"
       publish();

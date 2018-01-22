@@ -55,27 +55,16 @@ function drawButton(){
       //BUTTON SETUP
       yesButton = createButton('Yes');
       yesButton.position(20, 65);
-      yesButton.mousePressed(function(){
-        outResponse.response = "yes"
-        publish();
-      });
+      yesButton.mousePressed(function(){outResponse.response = "yes"; publish();});
       noButton = createButton('No');
       noButton.position(60, 65);
-      noButton.mousePressed(function(){
-        outResponse.response = "yes"
-        publish();
-      });
+      noButton.mousePressed(function(){outResponse.response = "no"; publish();});
       break;
     default:
       //BUTTON SETUP
       startButton = createButton('Start');
       startButton.position(20, 65);
-      startButton.mousePressed(function(){
-        outResponse.response = "start"
-        publish();
-        //move on the state to display the yes/no buttons
-        changeState();
-      });
+      startButton.mousePressed(function(){outResponse.response = "start"; publish();});
   }
 
 }

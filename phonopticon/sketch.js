@@ -1,7 +1,7 @@
 var pubnubError = true;
 var myUserID;
-var outResponse = {uuid: 0, response: ''};
-var inResponse = {uuid: 0, response: ''};
+var outResponse = {uuid: 0};
+var inResponse = {uuid: 0};
 var channelName = 'Channel-5pibjxuoh';
 var startButton;
 
@@ -28,7 +28,7 @@ function setup() {
     startButton = createButton('Start');
     startButton.position(20, 65);
     startButton.mousePressed(function(){
-      outResponse.message = "start"
+      outResponse.response = "start"
       publish();
     });
 

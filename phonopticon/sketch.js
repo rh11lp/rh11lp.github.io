@@ -2,7 +2,7 @@ var pubnubError = true;
 var myUserID;
 var outResponse = {uuid: 0};
 var inResponse = {uuid: 0};
-var channelName = 'Channel-5pibjxuoh';
+var channelName = 'mudit';
 var startButton;
 var state = 0; //states: 0-START 1-Y/N 2-FINAL
 

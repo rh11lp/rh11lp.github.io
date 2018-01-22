@@ -4,6 +4,7 @@ var outResponse = {uuid: 0};
 var inResponse = {uuid: 0};
 var channelName = 'Channel-5pibjxuoh';
 var startButton;
+var state = 0; //states: 0-START 1-Y/N 2-FINAL
 
 function setup() {
 
@@ -24,21 +25,58 @@ function setup() {
 
     outResponse.uuid = myUserID;
 
-    //BUTTON SETUP
-    startButton = createButton('Start');
-    startButton.position(20, 65);
-    startButton.mousePressed(function(){
-      outResponse.response = "start"
-      publish();
-    });
-
     console.log("done setup");
 
 }
 
 function draw() {
+  background(127);
+  drawButton();
+}
 
+function changeState() {
+  state++;
+}
 
+function drawButton(){
+  switch(state){
+    case 0:
+      //BUTTON SETUP
+      startButton = createButton('Start');
+      startButton.position(20, 65);
+      startButton.mousePressed(function(){
+        outResponse.response = "start"
+        publish();
+        //move on the state to display the yes/no buttons
+        changeState();
+      });
+      break;
+    case 1:
+      //BUTTON SETUP
+      yesButton = createButton('Yes');
+      yesButton.position(20, 65);
+      yesButton.mousePressed(function(){
+        outResponse.response = "yes"
+        publish();
+      });
+      noButton = createButton('No');
+      noButton.position(60, 65);
+      noButton.mousePressed(function(){
+        outResponse.response = "yes"
+        publish();
+      });
+      break;
+    default:
+      //BUTTON SETUP
+      startButton = createButton('Start');
+      startButton.position(20, 65);
+      startButton.mousePressed(function(){
+        outResponse.response = "start"
+        publish();
+        //move on the state to display the yes/no buttons
+        changeState();
+      });
+  }
 
 }
 

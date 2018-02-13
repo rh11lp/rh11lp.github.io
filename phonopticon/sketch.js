@@ -5,6 +5,7 @@ var inResponse = {uuid: 0};
 var channelName = 'mudit';
 var startButton;
 var state = 0; //states: 0-START 1-Y/N 2-FINAL
+var numAns = 0;
 
 function setup() {
 
@@ -59,18 +60,37 @@ function drawButton(){
         publish();
         //move on the state to display the yes/no buttons
         changeState();
-
       });
       break;
     case 2:
       //BUTTON SETUP
-      yesButton = createButton('Yes');
-      yesButton.position(20, 65);
-      yesButton.mousePressed(function(){outResponse.response = "yes"; publish();});
-      noButton = createButton('No');
-      noButton.position(60, 65);
-      noButton.mousePressed(function(){outResponse.response = "no"; publish();});
+      if(numAns<=5){
+        yesButton = createButton('Yes');
+        yesButton.position(20, 65);
+        yesButton.mousePressed(function(){
+          outResponse.response = "yes"; publish();
+          numAns++;
+        });
+
+        noButton = createButton('No');
+        noButton.position(60, 65);
+        noButton.mousePressed(function(){
+          outResponse.response = "no"; publish();
+          numAns++;
+        });
+      } else {changeState();}
+
       break;
+    case 3:
+        continueButton = createButton('Continue...');
+        continueButton.position(20, 65);
+        continueButton.mousePressed(function(){
+          outResponse.response = "continue"
+          publish();
+          //move on the state to display the yes/no buttons
+          changeState();
+        });
+        break;
     default:
       //BUTTON SETUP
       startButton = createButton('Start');

@@ -45,7 +45,8 @@ function drawButton(){
       //BUTTON SETUP
       startButton = createButton('Start');
       startButton.position(20, 65);
-      startButton.size(40, 90);
+      startButton.size(90, 40);
+      startButton.fill('green');
       startButton.mousePressed(function(){
         outResponse.response = "start"
         publish();

@@ -52,6 +52,15 @@ function drawButton(){
       });
       break;
     case 1:
+      okButton = createButton('Okays');
+      okButton.position(20, 65);
+      okButton.mousePressed(function(){
+      outResponse.response = "okay"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+
+    case 2:
       //BUTTON SETUP
       yesButton = createButton('Yes');
       yesButton.position(20, 65);

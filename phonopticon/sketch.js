@@ -59,7 +59,7 @@ function drawButton(){
       publish();
       //move on the state to display the yes/no buttons
       changeState();
-
+      break;
     case 2:
       //BUTTON SETUP
       yesButton = createButton('Yes');

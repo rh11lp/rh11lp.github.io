@@ -52,14 +52,14 @@ function drawButton(){
       });
       break;
     case 1:
-      okButton = createButton('Okays');
+      okButton = createButton('Okay');
       okButton.position(20, 65);
       okButton.mousePressed(function(){
         outResponse.response = "okay"
         publish();
         //move on the state to display the yes/no buttons
         changeState();
-        
+
       });
       break;
     case 2:

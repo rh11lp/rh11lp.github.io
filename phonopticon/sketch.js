@@ -8,7 +8,7 @@ var state = 0; //states: 0-START 1-Y/N 2-FINAL
 var numAns = 0;
 
 function setup() {
-
+    createCanvas(windowWidth, windowHeight);
     // initialize pubnub
     pubnub = PUBNUB.init({
       publish_key   : 'pub-c-a210a34e-4b38-474e-8fe8-b70f0c0b2924',  //get these from the pubnub account online
@@ -93,9 +93,9 @@ function drawButton(){
         break;
     default:
       //BUTTON SETUP
-      startButton = createButton('Start');
-      startButton.position(20, 65);
-      startButton.mousePressed(function(){outResponse.response = "start"; publish();});
+      reStartButton = createButton('Restart');
+      reStartButton.position(20, 65);
+      reStartButton.mousePressed(function(){outResponse.response = "restart"; publish();});
   }
 
 }

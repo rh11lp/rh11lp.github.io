@@ -31,7 +31,7 @@ function setup() {
 }
 
 function draw() {
-  clearCanvas();
+  removeElements();
   drawButton();
   background('black');
 }

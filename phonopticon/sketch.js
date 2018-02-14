@@ -31,7 +31,7 @@ function setup() {
 }
 
 function draw() {
-  background(127);
+  background('black');
   drawButton();
 }
 

@@ -33,6 +33,7 @@ function setup() {
 function draw() {
   background(127);
   drawButton();
+  clear();
 }
 
 function changeState() {
@@ -49,6 +50,7 @@ function drawButton(){
       startButton.style('background-color', '#12b259');
       startButton.style('border', 'none');
       startButton.style('color', '#fffbf7')
+      startButton.style('font-weight', 'bold')
       startButton.mousePressed(function(){
         outResponse.response = "start"
         publish();

@@ -92,7 +92,7 @@ function drawButton(){
         });
 
         noButton = createButton('No');
-        noButton.position(width/20, height/2+(height/10));
+        noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/10));
         noButton.style('background-color', '#e00b0b');
         noButton.style('border', 'none');

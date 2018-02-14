@@ -31,8 +31,9 @@ function setup() {
 }
 
 function draw() {
-  background('black');
+  clearCanvas();
   drawButton();
+  background('black');
 }
 
 function changeState() {

@@ -44,7 +44,7 @@ function drawButton(){
     case 0:
       //BUTTON SETUP
       startButton = createButton('Start');
-      startButton.position(windowWidth/20, windowHeight/2);
+      startButton.position(width/20, height/4);
       startButton.size(windowWidth-(windowWidth/10), windowHeight-(windowHeight/4));
       startButton.style('background-color', '#12b259');
       startButton.style('border', 'none');

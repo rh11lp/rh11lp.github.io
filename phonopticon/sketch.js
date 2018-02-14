@@ -46,7 +46,7 @@ function drawButton(){
       //BUTTON SETUP
       startButton = createButton('Start');
       startButton.position(width/20, height/8);
-      startButton.size(windowWidth-(windowWidth/10), windowHeight-(windowHeight/2));
+      startButton.size(width-(width/10), height-(height/2));
       startButton.style('background-color', '#12b259');
       startButton.style('border', 'none');
       startButton.style('color', '#fffbf7')
@@ -61,7 +61,13 @@ function drawButton(){
       break;
     case 1:
       okButton = createButton('Okay');
-      okButton.position(20, 65);
+      okButton.position(width/20, height/8);
+      okButton.size(width-(width/10), height-(height/2));
+      okButton.style('background-color', '#12b259');
+      okButton.style('border', 'none');
+      okButton.style('color', '#fffbf7')
+      okButton.style('font-weight', 'bold')
+      okButton.style('font-size', '225px')
       okButton.mousePressed(function(){
         outResponse.response = "okay"
         publish();

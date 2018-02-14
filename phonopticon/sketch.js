@@ -53,7 +53,7 @@ function drawButton(){
       startButton.style('font-weight', 'bold')
       startButton.style('font-size', '225px')
       startButton.mousePressed(function(){
-        yesButton.style('background-color', '#148245');
+        startButton.style('background-color', '#148245');
         outResponse.response = "start"
         publish();
         //move on the state to display the yes/no buttons
@@ -70,7 +70,7 @@ function drawButton(){
       okButton.style('font-weight', 'bold')
       okButton.style('font-size', '225px')
       okButton.mousePressed(function(){
-        yesButton.style('background-color', '#148245');
+        okButton.style('background-color', '#148245');
         outResponse.response = "okay"
         publish();
         //move on the state to display the yes/no buttons
@@ -120,7 +120,7 @@ function drawButton(){
         continueButton.style('font-weight', 'bold')
         continueButton.style('font-size', '225px')
         continueButton.mousePressed(function(){
-          yesButton.style('background-color', '#148245');
+          continueButton.style('background-color', '#148245');
           outResponse.response = "continue"
           publish();
           //move on the state to display the yes/no buttons
@@ -138,7 +138,7 @@ function drawButton(){
       reStartButton.style('font-weight', 'bold')
       reStartButton.style('font-size', '225px')
       reStartButton.mousePressed(function(){
-        yesButton.style('background-color', '#148245');
+        reStartButton.style('background-color', '#148245');
         outResponse.response = "restart"; publish();
       });
   }

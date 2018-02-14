@@ -45,7 +45,7 @@ function drawButton(){
       //BUTTON SETUP
       startButton = createButton('Start');
       startButton.position(width/20, height/8);
-      startButton.size(windowWidth-(windowWidth/10), windowHeight-(windowHeight/6));
+      startButton.size(windowWidth-(windowWidth/10), windowHeight-(windowHeight/2));
       startButton.style('background-color', '#12b259');
       startButton.style('border', 'none');
       startButton.style('color', '#fffbf7')
@@ -59,7 +59,6 @@ function drawButton(){
       });
       break;
     case 1:
-      startButton.hide();
       okButton = createButton('Okay');
       okButton.position(20, 65);
       okButton.mousePressed(function(){
@@ -70,7 +69,6 @@ function drawButton(){
       });
       break;
     case 2:
-      okButton.hide();
       //BUTTON SETUP
       if(numAns<=5){
         yesButton = createButton('Yes');
@@ -90,8 +88,6 @@ function drawButton(){
 
       break;
     case 3:
-        yesButton.hide();
-        noButton.hide();
         continueButton = createButton('Continue...');
         continueButton.position(20, 65);
         continueButton.mousePressed(function(){

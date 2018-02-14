@@ -33,7 +33,6 @@ function setup() {
 function draw() {
   background(127);
   drawButton();
-  clear();
 }
 
 function changeState() {
@@ -59,6 +58,7 @@ function drawButton(){
       });
       break;
     case 1:
+      startButton.hide();
       okButton = createButton('Okay');
       okButton.position(20, 65);
       okButton.mousePressed(function(){
@@ -69,6 +69,7 @@ function drawButton(){
       });
       break;
     case 2:
+      okButton.hide();
       //BUTTON SETUP
       if(numAns<=5){
         yesButton = createButton('Yes');
@@ -88,6 +89,8 @@ function drawButton(){
 
       break;
     case 3:
+        yesButton.hide();
+        noButton.hide();
         continueButton = createButton('Continue...');
         continueButton.position(20, 65);
         continueButton.mousePressed(function(){

@@ -50,7 +50,7 @@ function drawButton(){
       startButton.style('border', 'none');
       startButton.style('color', '#fffbf7')
       startButton.style('font-weight', 'bold')
-      startButton.style('font-size', '100%')
+      startButton.style('font-size', '225px')
       startButton.mousePressed(function(){
         outResponse.response = "start"
         publish();

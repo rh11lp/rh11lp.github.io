@@ -48,6 +48,7 @@ function drawButton(){
       startButton.size(90, 40);
       startButton.style('background-color', '#12b259');
       startButton.style('border', 'none');
+      startButton.style('color', '#fffbf7')
       startButton.mousePressed(function(){
         outResponse.response = "start"
         publish();

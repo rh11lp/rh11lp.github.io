@@ -80,7 +80,7 @@ function drawButton(){
       if(numAns<=5){
         yesButton = createButton('Yes');
         yesButton.position(width/20, height/8);
-        yesButton.size(width-(width/10), height-(height/2));
+        yesButton.size(width-(width/10), height/2-(height/10));
         yesButton.style('background-color', '#12b259');
         yesButton.style('border', 'none');
         yesButton.style('color', '#fffbf7')
@@ -92,8 +92,8 @@ function drawButton(){
         });
 
         noButton = createButton('No');
-        noButton.position(width/20, height/2);
-        noButton.size(width-(width/10), height-(height/2));
+        noButton.position(width/20, height/2+(height/10));
+        noButton.size(width-(width/10), height/2-(height/10));
         noButton.style('background-color', '#e00b0b');
         noButton.style('border', 'none');
         noButton.style('color', '#fffbf7')

@@ -111,14 +111,14 @@ function drawButton(){
 
       break;
     case 3:
-        continueButton = createButton('Continue...');
+        continueButton = createButton('Continue');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));
         continueButton.style('background-color', '#12b259');
         continueButton.style('border', 'none');
         continueButton.style('color', '#fffbf7')
         continueButton.style('font-weight', 'bold')
-        continueButton.style('font-size', '225px')
+        continueButton.style('font-size', '115px')
         continueButton.mousePressed(function(){
           continueButton.style('background-color', '#148245');
           outResponse.response = "continue"
@@ -136,7 +136,7 @@ function drawButton(){
       reStartButton.style('border', 'none');
       reStartButton.style('color', '#fffbf7')
       reStartButton.style('font-weight', 'bold')
-      reStartButton.style('font-size', '225px')
+      reStartButton.style('font-size', '115px')
       reStartButton.mousePressed(function(){
         reStartButton.style('background-color', '#148245');
         outResponse.response = "restart"; publish();

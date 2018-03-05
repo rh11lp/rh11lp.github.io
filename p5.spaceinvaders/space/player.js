@@ -22,8 +22,14 @@ function Player(x, y){
   function serialEvent() {
     inData = Number(serial.read()); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
     console.log("inData", inData);
-    if (inData == 0) this.left = true;
-    if (inData == 1) this.right = true;
+    if (inData == 0) {
+      this.left = true;
+      this.right = false;
+    }
+    if (inData == 1) {
+      this.right = true;
+        this.left = false;
+    }
   }
 
   this.keyPressed = function(){

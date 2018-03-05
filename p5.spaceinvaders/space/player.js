@@ -28,6 +28,10 @@ function Player(x, y){
       this.right = true;
       this.left = false;
     }
+    if(inData == 115 && !this.fire) {
+      this.fire = true;
+      append(bullets, new Bullet(this.x, this.y-h2));
+    }
   }
 
   this.keyPressed = function(){

@@ -128,8 +128,6 @@ function startGame(){
 
 function serialEvent(){
   inData = serial.read(); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
-
-  console.log("inData", inData);
   p.playerMove();
 }
 

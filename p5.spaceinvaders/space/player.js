@@ -21,7 +21,7 @@ function Player(x, y){
 
   function serialEvent() {
     inData = Number(serial.read()); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
-    console.log("inData", inData);
+    console.log("inData", typeof inData);
     if (inData == 48) {
       console.log("left")
       this.left = true;

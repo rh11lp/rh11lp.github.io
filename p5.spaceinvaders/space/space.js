@@ -45,11 +45,6 @@ function preload(){
 
 function setup() {
 
-  serial = new p5.SerialPort();    // make a new instance of the serialport library
-  serial.on('data', player.serialEvent);  // callback for when new data arrives
-  serial.on('error', serialError); // callback for errors
-  serial.open('COM3');           // open a serial port
-
   myCanvas = createCanvas(600, 450);
   myCanvas.parent('myContainer');
   ellipseMode(CENTER);
@@ -120,6 +115,12 @@ function startGame(){
   lives = 3;
   score = 0;
   p = new Player(width/2, height-10);
+
+  serial = new p5.SerialPort();    // make a new instance of the serialport library
+  serial.on('data', p.serialEvent);  // callback for when new data arrives
+  serial.on('error', serialError); // callback for errors
+  serial.open('COM3');           // open a serial port
+
   createWalls();
   createUfos();
   game = true;

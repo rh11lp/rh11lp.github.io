@@ -32,6 +32,7 @@ function Player(x, y){
       this.fire = true;
       append(bullets, new Bullet(this.x, this.y-h2));
     }
+    this.fire = false;
   }
 
   this.keyPressed = function(){

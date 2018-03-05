@@ -22,11 +22,11 @@ function Player(x, y){
   function serialEvent() {
     inData = Number(serial.read()); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
     console.log("inData", inData);
-    if (inData == 0) {
+    if (inData == 48) {
       this.left = true;
       this.right = false;
     }
-    if (inData == 1) {
+    if (inData == 49) {
       this.right = true;
         this.left = false;
     }

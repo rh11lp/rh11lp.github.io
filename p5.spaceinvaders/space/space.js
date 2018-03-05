@@ -46,7 +46,7 @@ function preload(){
 function setup() {
 
   serial = new p5.SerialPort();    // make a new instance of the serialport library
-  serial.on('data', serialEvent);  // callback for when new data arrives
+  serial.on('data', player.serialEvent);  // callback for when new data arrives
   serial.on('error', serialError); // callback for errors
   serial.open('COM3');           // open a serial port
 

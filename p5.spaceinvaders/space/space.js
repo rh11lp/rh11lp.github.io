@@ -117,13 +117,19 @@ function startGame(){
   p = new Player(width/2, height-10);
 
   serial = new p5.SerialPort();    // make a new instance of the serialport library
-  serial.on('data', p.serialEvent);  // callback for when new data arrives
+  serial.on('data', serialEvent);  // callback for when new data arrives
   serial.on('error', serialError); // callback for errors
   serial.open('COM3');           // open a serial port
 
   createWalls();
   createUfos();
   game = true;
+}
+
+function serialEvent(){
+  inData = Number(serial.read()); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
+  console.log("inData", typeof inData);
+  p.playerMove();
 }
 
 function drawIntro(){

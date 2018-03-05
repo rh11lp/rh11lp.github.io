@@ -19,7 +19,7 @@ function Player(x, y){
     else image(ship, this.x, this.y);
   }
 
-  playerMove = function() {
+  this.playerMove = function() {
     console.log("playerMove")
     if (inData == 48) {
       console.log("left")

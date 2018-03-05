@@ -20,14 +20,11 @@ function Player(x, y){
   }
 
   this.playerMove = function() {
-    console.log("playerMove")
     if (inData == 48) {
-      console.log("left")
       this.left = true;
       this.right = false;
     }
     if (inData == 49) {
-      console.log("right")
       this.right = true;
       this.left = false;
     }

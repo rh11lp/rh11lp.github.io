@@ -127,8 +127,9 @@ function startGame(){
 }
 
 function serialEvent(){
-  inData = Number(serial.read()); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
-  console.log("inData", p);
+  inData = serial.read(); //kind of unecessary, but leaving this in so i can quickly make use of it later if i want to
+
+  console.log("inData", inData);
   p.playerMove();
 }
 

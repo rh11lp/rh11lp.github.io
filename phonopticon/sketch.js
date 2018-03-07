@@ -86,7 +86,7 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        if(currentTime - timer >= 30000){
+        if(currTime - timer >= 30000){
           yesButton.disabled = false;
           noButton.disabled = false;
         }

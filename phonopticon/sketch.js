@@ -30,10 +30,13 @@ function setup() {
 
 }
 
+var timer = 0;
+var currTime = 0;
 function draw() {
   removeElements();
   drawButton();
   background('black');
+  currTime = millis();
 }
 
 function changeState() {
@@ -81,6 +84,13 @@ function drawButton(){
       //BUTTON SETUP
       if(numAns<=5){
         yesButton = createButton('Yes');
+        noButton = createButton('No');
+
+        if(currentTime - timer >= 30000){
+          yesButton.disabled = false;
+          noButton.disabled = false;
+        }
+
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
         yesButton.style('background-color', '#12b259');
@@ -92,9 +102,12 @@ function drawButton(){
           yesButton.style('background-color', '#148245');
           outResponse.response = "yes"; publish();
           numAns++;
+          timer = millis();
+          yesButton.disabled = true;
+          noButton.disabled = true;
         });
 
-        noButton = createButton('No');
+
         noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/4));
         noButton.style('background-color', '#e00b0b');
@@ -106,7 +119,11 @@ function drawButton(){
           noButton.style('background-color', '#b71414');
           outResponse.response = "no"; publish();
           numAns++;
+          timer = millis();
+          yesButton.disabled = true;
+          noButton.disabled = true;
         });
+
       } else {changeState();}
 
       break;

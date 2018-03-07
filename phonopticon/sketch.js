@@ -93,8 +93,9 @@ function drawButton(){
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
-        yesButton.style('background-color', 'none');
+        yesButton.style('background-color', '#000000');
         yesButton.style('border', '1px solid #2bec9b');
+        yesButton.style('border-radius', '4px');
         yesButton.style('color', '#2bec9b');
         yesButton.style('font-weight', 'bold');
         yesButton.style('font-size', '225px');
@@ -110,8 +111,9 @@ function drawButton(){
 
         noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/4));
-        noButton.style('background-color', 'none');
+        noButton.style('background-color', '#000000');
         noButton.style('border', '1px solid #2bec9b');
+        noButton.style('border-radius', '4px');
         noButton.style('color', '#2bec9b');
         noButton.style('font-weight', 'bold');
         noButton.style('font-size', '225px');

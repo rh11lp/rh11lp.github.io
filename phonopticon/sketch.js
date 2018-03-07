@@ -55,7 +55,7 @@ function drawButton(){
       startButton.style('border-radius', '4px');
       startButton.style('color', '#2bec9b');
       startButton.style('font-size', '225px')
-      startButton.touchedEnded(function(){
+      startButton.touchEnded(function(){
         startButton.style('background-color', '#2bec9b');
         startButton.style('color', '#000000');
         outResponse.response = "start"
@@ -74,7 +74,7 @@ function drawButton(){
       okButton.style('border-radius', '4px');
       okButton.style('color', '#2bec9b');
       okButton.style('font-size', '225px')
-      okButton.touchedEnded(function(){
+      okButton.touchEnded(function(){
         okButton.style('background-color', '#2bec9b');
         okButton.style('color', '#000000');
         outResponse.response = "okay"
@@ -103,7 +103,7 @@ function drawButton(){
         yesButton.style('color', '#2bec9b');
         // yesButton.style('font-weight', '500');
         yesButton.style('font-size', '225px');
-        yesButton.touchedEnded(function(){
+        yesButton.touchEnded(function(){
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
           outResponse.response = "yes"; publish();
@@ -122,7 +122,7 @@ function drawButton(){
         noButton.style('border-radius', '4px');
         noButton.style('color', '#2bec9b');
         noButton.style('font-size', '225px');
-        noButton.touchedEnded(function(){
+        noButton.touchEnded(function(){
           noButton.style('background-color', '#2bec9b');
           noButton.style('color', '#000000');
           outResponse.response = "no"; publish();
@@ -145,7 +145,7 @@ function drawButton(){
         continueButton.style('border-radius', '4px');
         continueButton.style('color', '#2bec9b');
         continueButton.style('font-size', '115px')
-        continueButton.touchedEnded(function(){
+        continueButton.touchEnded(function(){
           continueButton.style('background-color', '#2bec9b');
           continueButton.style('color', '#000000');
           outResponse.response = "continue"
@@ -165,7 +165,7 @@ function drawButton(){
       reStartButton.style('border-radius', '4px');
       reStartButton.style('color', '#2bec9b');
       reStartButton.style('font-size', '115px')
-      reStartButton.touchedEnded(function(){
+      reStartButton.touchEnded(function(){
         reStartButton.style('background-color', '#2bec9b');
         reStartButton.style('color', '#000000');
         outResponse.response = "restart"; publish();

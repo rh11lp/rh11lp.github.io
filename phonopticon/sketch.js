@@ -93,13 +93,13 @@ function drawButton(){
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
-        yesButton.style('background-color', '#12b259');
-        yesButton.style('border', 'none');
-        yesButton.style('color', '#fffbf7')
-        yesButton.style('font-weight', 'bold')
-        yesButton.style('font-size', '225px')
+        // yesButton.style('background-color', '#12b259');
+        yesButton.style('border', '1px solid #2bec9b');
+        yesButton.style('color', '#2bec9b');
+        yesButton.style('font-weight', 'bold');
+        yesButton.style('font-size', '225px');
         yesButton.mousePressed(function(){
-          yesButton.style('background-color', '#148245');
+          // yesButton.style('background-color', '#148245');
           outResponse.response = "yes"; publish();
           numAns++;
           timer = millis();
@@ -110,13 +110,13 @@ function drawButton(){
 
         noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/4));
-        noButton.style('background-color', '#e00b0b');
-        noButton.style('border', 'none');
-        noButton.style('color', '#fffbf7')
-        noButton.style('font-weight', 'bold')
-        noButton.style('font-size', '225px')
+        // noButton.style('background-color', '#e00b0b');
+        noButton.style('border', '1px solid #2bec9b');
+        noButton.style('color', '#2bec9b');
+        noButton.style('font-weight', 'bold');
+        noButton.style('font-size', '225px');
         noButton.mousePressed(function(){
-          noButton.style('background-color', '#b71414');
+          // noButton.style('background-color', '#b71414');
           outResponse.response = "no"; publish();
           numAns++;
           timer = millis();

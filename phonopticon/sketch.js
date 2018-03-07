@@ -61,6 +61,7 @@ function drawButton(){
         publish();
         //move on the state to display the yes/no buttons
         changeState();
+        return false;
       });
       break;
     case 1:
@@ -78,6 +79,7 @@ function drawButton(){
         publish();
         //move on the state to display the yes/no buttons
         changeState();
+        return false;
       });
       break;
     case 2:
@@ -106,6 +108,7 @@ function drawButton(){
           timer = millis();
           yesButton.disabled = true;
           noButton.disabled = true;
+          return false;
         });
 
 
@@ -124,6 +127,7 @@ function drawButton(){
           timer = millis();
           yesButton.disabled = true;
           noButton.disabled = true;
+          return false;
         });
 
       } else {changeState();}
@@ -144,6 +148,7 @@ function drawButton(){
           publish();
           //move on the state to display the yes/no buttons
           changeState();
+          return false;
         });
         break;
     default:
@@ -159,6 +164,7 @@ function drawButton(){
       reStartButton.mousePressed(function(){
         reStartButton.style('background-color', '#148245');
         outResponse.response = "restart"; publish();
+        return false;
       });
   }
 

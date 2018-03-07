@@ -50,10 +50,10 @@ function drawButton(){
       startButton = createButton('Start');
       startButton.position(width/20, height/8);
       startButton.size(width-(width/10), height-(height/2));
-      startButton.style('background-color', '#12b259');
-      startButton.style('border', 'none');
-      startButton.style('color', '#fffbf7')
-      startButton.style('font-weight', 'bold')
+      startButton.style('background-color', '#000000');
+      startButton.style('border', '4px solid #2bec9b');
+      startButton.style('border-radius', '4px');
+      startButton.style('color', '#2bec9b');
       startButton.style('font-size', '225px')
       startButton.mousePressed(function(){
         startButton.style('background-color', '#148245');
@@ -67,10 +67,10 @@ function drawButton(){
       okButton = createButton('Okay');
       okButton.position(width/20, height/8);
       okButton.size(width-(width/10), height-(height/2));
-      okButton.style('background-color', '#12b259');
-      okButton.style('border', 'none');
-      okButton.style('color', '#fffbf7')
-      okButton.style('font-weight', 'bold')
+      okButton.style('background-color', '#000000');
+      okButton.style('border', '4px solid #2bec9b');
+      okButton.style('border-radius', '4px');
+      okButton.style('color', '#2bec9b');
       okButton.style('font-size', '225px')
       okButton.mousePressed(function(){
         okButton.style('background-color', '#148245');
@@ -94,10 +94,10 @@ function drawButton(){
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
         yesButton.style('background-color', '#000000');
-        yesButton.style('border', '1px solid #2bec9b');
+        yesButton.style('border', '4px solid #2bec9b');
         yesButton.style('border-radius', '4px');
         yesButton.style('color', '#2bec9b');
-        yesButton.style('font-weight', 'bold');
+        // yesButton.style('font-weight', '500');
         yesButton.style('font-size', '225px');
         yesButton.mousePressed(function(){
           // yesButton.style('background-color', '#148245');
@@ -112,10 +112,10 @@ function drawButton(){
         noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/4));
         noButton.style('background-color', '#000000');
-        noButton.style('border', '1px solid #2bec9b');
+        noButton.style('border', '4px solid #2bec9b');
         noButton.style('border-radius', '4px');
         noButton.style('color', '#2bec9b');
-        noButton.style('font-weight', 'bold');
+        // noButton.style('font-weight', '500');
         noButton.style('font-size', '225px');
         noButton.mousePressed(function(){
           // noButton.style('background-color', '#b71414');
@@ -133,10 +133,10 @@ function drawButton(){
         continueButton = createButton('Continue');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));
-        continueButton.style('background-color', '#12b259');
-        continueButton.style('border', 'none');
-        continueButton.style('color', '#fffbf7')
-        continueButton.style('font-weight', 'bold')
+        continueButton.style('background-color', '#000000');
+        continueButton.style('border', '4px solid #2bec9b');
+        continueButton.style('border-radius', '4px');
+        continueButton.style('color', '#2bec9b');
         continueButton.style('font-size', '115px')
         continueButton.mousePressed(function(){
           continueButton.style('background-color', '#148245');
@@ -151,10 +151,10 @@ function drawButton(){
       reStartButton = createButton('Restart');
       reStartButton.position(width/20, height/8);
       reStartButton.size(width-(width/10), height-(height/2));
-      reStartButton.style('background-color', '#12b259');
-      reStartButton.style('border', 'none');
-      reStartButton.style('color', '#fffbf7')
-      reStartButton.style('font-weight', 'bold')
+      reStartButton.style('background-color', '#000000');
+      reStartButton.style('border', '4px solid #2bec9b');
+      reStartButton.style('border-radius', '4px');
+      reStartButton.style('color', '#2bec9b');
       reStartButton.style('font-size', '115px')
       reStartButton.mousePressed(function(){
         reStartButton.style('background-color', '#148245');

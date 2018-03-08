@@ -88,6 +88,14 @@ function drawButton(){
     case 2:
 
       testbutton = createButton('test');
+      testbutton.position(0, 0);
+      testbutton.size(width-(width/10), height/2-(height/4));
+      testbutton.style('background-color', '#000000');
+      testbutton.style('border', '4px solid #2bec9b');
+      testbutton.style('border-radius', '4px');
+      testbutton.style('color', '#2bec9b');
+      // yesButton.style('font-weight', '500');
+      yesButton.style('font-size', '225px');
 
       // testbutton.attribute('disabled','true');
       testbutton.touchEnded(function(){console.log('herpaderp');});

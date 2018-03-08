@@ -160,6 +160,44 @@ function drawButton(){
           return false;
         });
         break;
+    case 4:
+        tellMeHow = createButton('Tell me how');
+        tellMeHow.position(width/20, height/10);
+        tellMeHow.size(width-(width/10), height-(height/4));
+        tellMeHow.style('background-color', '#000000');
+        tellMeHow.style('border', '4px solid #2bec9b');
+        tellMeHow.style('border-radius', '4px');
+        tellMeHow.style('color', '#2bec9b');
+        tellMeHow.style('font-size', '115px')
+        tellMeHow.touchEnded(function(){
+          tellMeHow.style('background-color', '#2bec9b');
+          tellMeHow.style('color', '#000000');
+          outResponse.response = "how"
+          publish();
+          //move on the state to display the yes/no buttons
+          changeState();
+          return false;
+        });
+
+        endButton = createButton('End');
+        endButton.position(width/20, height/2);
+        endButton.size(width-(width/10), height/2-(height/4));
+        endButton.style('background-color', '#000000');
+        endButton.style('border', '4px solid #2bec9b');
+        endButton.style('border-radius', '4px');
+        endButton.style('color', '#2bec9b');
+        endButton.style('font-size', '225px');
+        endButton.touchEnded(function(){
+          endButton.style('background-color', '#2bec9b');
+          endButton.style('color', '#000000');
+          outResponse.response = "end"
+          publish();
+          //move on the state to display the yes/no buttons
+          changeState();
+          return false;
+        });
+
+        break;
     default:
       //BUTTON SETUP
       reStartButton = createButton('Restart');

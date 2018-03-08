@@ -90,7 +90,9 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        console.log(currTime, timer, (currTime - timer >= 30000));
+        var timespent = currTime - timer >= 30000;
+        console.log("whathat", currTime, timer, timespent)
+
         if(currTime - timer >= 30000){
           console.log('enable the buttons');
           yesButton.attribute('disabled','false');

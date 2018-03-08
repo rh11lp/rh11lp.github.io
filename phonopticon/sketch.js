@@ -95,7 +95,7 @@ function drawButton(){
       testbutton.style('border-radius', '4px');
       testbutton.style('color', '#2bec9b');
       // yesButton.style('font-weight', '500');
-      yesButton.style('font-size', '225px');
+      testbutton.style('font-size', '225px');
 
       // testbutton.attribute('disabled','true');
       testbutton.touchEnded(function(){console.log('herpaderp');});

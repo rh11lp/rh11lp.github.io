@@ -90,7 +90,7 @@ function drawButton(){
       testbutton = createButton('test');
 
       testbutton.attribute('disabled','true');
-      testbutton.touchEnded(console.log('herpaderp'));
+      testbutton.touchEnded(function(){console.log('herpaderp');});
 
       //BUTTON SETUP
       if(numAns<=5){

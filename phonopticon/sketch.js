@@ -193,27 +193,45 @@ function drawButton(){
           outResponse.response = "end"
           publish();
           //move on the state to display the yes/no buttons
-          changeState();
+          state = 6;
           return false;
         });
 
         break;
-    default:
+    case 5:
       //BUTTON SETUP
-      reStartButton = createButton('Restart');
-      reStartButton.position(width/20, height/8);
-      reStartButton.size(width-(width/10), height-(height/2));
-      reStartButton.style('background-color', '#000000');
-      reStartButton.style('border', '4px solid #2bec9b');
-      reStartButton.style('border-radius', '4px');
-      reStartButton.style('color', '#2bec9b');
-      reStartButton.style('font-size', '115px')
-      reStartButton.touchEnded(function(){
-        reStartButton.style('background-color', '#2bec9b');
-        reStartButton.style('color', '#000000');
-        outResponse.response = "restart"; publish();
+      endButton = createButton('End');
+      endButton.position(width/20, height/2);
+      endButton.size(width-(width/10), height/2-(height/4));
+      endButton.style('background-color', '#000000');
+      endButton.style('border', '4px solid #2bec9b');
+      endButton.style('border-radius', '4px');
+      endButton.style('color', '#2bec9b');
+      endButton.style('font-size', '225px');
+      endButton.touchEnded(function(){
+        endButton.style('background-color', '#2bec9b');
+        endButton.style('color', '#000000');
+        outResponse.response = "end"
+        publish();
+        //move on the state to display the yes/no buttons
+        state = 6;
         return false;
       });
+
+      break;
+
+    default:
+      //BUTTON SETUP
+      thankYouButton = createButton('Thank you.');
+      thankYouButton.position(width/20, height/8);
+      thankYouButton.size(width-(width/10), height-(height/2));
+      thankYouButton.style('background-color', '#000000');
+      thankYouButton.style('border', '4px solid #2bec9b');
+      thankYouButton.style('border-radius', '4px');
+      thankYouButton.style('color', '#2bec9b');
+      thankYouButton.style('font-size', '115px')
+
+    break;
   }
 
 }

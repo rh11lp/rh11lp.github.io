@@ -97,10 +97,10 @@ function drawButton(){
           console.log('enable the buttons');
           yesButton.attribute('disabled','false');
           noButton.attribute('disabled','false');
-        }else(
-          yesButton.attribute('disabled','true')
-          noButton.attribute('disabled','true')
-        )
+        }else{
+          yesButton.attribute('disabled','true');
+          noButton.attribute('disabled','true');
+        }
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));

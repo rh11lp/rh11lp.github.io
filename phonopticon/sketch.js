@@ -33,10 +33,10 @@ function setup() {
 var timer = 0;
 var currTime = 0;
 function draw() {
+  removeElements();
   drawButton();
   background('black');
   currTime = millis();
-  removeElements();
 }
 
 function changeState() {

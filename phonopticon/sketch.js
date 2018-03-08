@@ -92,12 +92,12 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        if(currTime - timer >= 30000 ){
-          console.log('buttons are enabled');
+        // if(currTime - timer >= 30000 ){
+        //   console.log('buttons are enabled');
           // yesButton.attribute('disabled','false');
           // noButton.attribute('disabled','false');
-          timer=0;
-        }
+        //   timer=0;
+        // }
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));

@@ -201,8 +201,8 @@ function drawButton(){
     case 5:
       //BUTTON SETUP
       endButton = createButton('End');
-      endButton.position(width/20, height/2);
-      endButton.size(width-(width/10), height/2-(height/4));
+      endButton.position(width/20, height/8);
+      endButton.size(width-(width/10), height-(height/2));
       endButton.style('background-color', '#000000');
       endButton.style('border', '4px solid #2bec9b');
       endButton.style('border-radius', '4px');

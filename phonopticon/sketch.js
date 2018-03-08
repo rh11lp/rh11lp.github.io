@@ -6,6 +6,7 @@ var channelName = 'mudit';
 var startButton;
 var state = 0; //states: 0-START 1-Y/N 2-FINAL
 var numAns = 0;
+var firstEntry = true;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -90,11 +91,12 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        if(currTime - timer >= 30000){
+        if(currTime - timer >= 30000 || firstEntry){
           console.log('buttons are enabled');
           yesButton.attribute('disabled','false');
           noButton.attribute('disabled','false');
           timer=0;
+          firstEntry=false;
         }else{
           console.log('buttons are disabled');
           yesButton.attribute('disabled','true');

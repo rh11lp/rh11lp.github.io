@@ -91,8 +91,8 @@ function drawButton(){
         noButton = createButton('No');
 
         if(currTime - timer >= 30000){
-          yesButton.disabled = false;
-          noButton.disabled = false;
+          yesButton.attribute('disabled','false');
+          noButton.attribute('disabled','false');
         }
 
         yesButton.position(width/20, height/10);
@@ -109,8 +109,8 @@ function drawButton(){
           outResponse.response = "yes"; publish();
           numAns++;
           timer = millis();
-          yesButton.disabled = true;
-          noButton.disabled = true;
+          yesButton.attribute('disabled','true');
+          noButton.attribute('disabled','true');
           return false;
         });
 
@@ -128,8 +128,8 @@ function drawButton(){
           outResponse.response = "no"; publish();
           numAns++;
           timer = millis();
-          yesButton.disabled = true;
-          noButton.disabled = true;
+          yesButton.attribute('disabled','true');
+          noButton.attribute('disabled','true');
           return false;
         });
 

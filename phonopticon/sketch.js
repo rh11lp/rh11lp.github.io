@@ -107,6 +107,7 @@ function drawButton(){
         // yesButton.style('font-weight', '500');
         yesButton.style('font-size', '225px');
         yesButton.touchEnded(function(){
+          console.log('buttons about to be disabled');
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
           outResponse.response = "yes"; publish();

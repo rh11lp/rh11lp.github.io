@@ -36,7 +36,7 @@ function draw() {
   drawButton();
   background('black');
   currTime = millis();
-  // removeElements();
+  removeElements();
 }
 
 function changeState() {
@@ -62,7 +62,6 @@ function drawButton(){
         publish();
         //move on the state to display the yes/no buttons
         changeState();
-        startButton.remove();
         return false;
       });
       break;
@@ -82,7 +81,6 @@ function drawButton(){
         publish();
         //move on the state to display the yes/no buttons
         changeState();
-        okButton.remove();
         return false;
       });
       break;

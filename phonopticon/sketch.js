@@ -163,7 +163,7 @@ function drawButton(){
     case 4:
         tellMeHow = createButton('Tell me how');
         tellMeHow.position(width/20, height/10);
-        tellMeHow.size(width-(width/10), height-(height/4));
+        tellMeHow.size(width-(width/10), height/2-(height/4));
         tellMeHow.style('background-color', '#000000');
         tellMeHow.style('border', '4px solid #2bec9b');
         tellMeHow.style('border-radius', '4px');

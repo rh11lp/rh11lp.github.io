@@ -94,8 +94,8 @@ function drawButton(){
 
         if(currTime - timer >= 30000 ){
           console.log('buttons are enabled');
-          yesButton.attribute('disabled','false');
-          noButton.attribute('disabled','false');
+          // yesButton.attribute('disabled','false');
+          // noButton.attribute('disabled','false');
           timer=0;
         }
 
@@ -114,8 +114,8 @@ function drawButton(){
           outResponse.response = "yes"; publish();
           numAns++;
           timer = millis();
-          yesButton.attribute('disabled','true');
-          noButton.attribute('disabled','true');
+          // yesButton.attribute('disabled','true');
+          // noButton.attribute('disabled','true');
           return false;
         });
 
@@ -133,8 +133,8 @@ function drawButton(){
           outResponse.response = "no"; publish();
           numAns++;
           timer = millis();
-          yesButton.attribute('disabled','true');
-          noButton.attribute('disabled','true');
+          // yesButton.attribute('disabled','true');
+          // noButton.attribute('disabled','true');
           return false;
         });
 
@@ -142,7 +142,7 @@ function drawButton(){
 
       break;
     case 3:
-        continueButton = createButton('Continue');
+        continueButton = createButton('Initialize');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));
         continueButton.style('background-color', '#000000');
@@ -153,7 +153,7 @@ function drawButton(){
         continueButton.touchEnded(function(){
           continueButton.style('background-color', '#2bec9b');
           continueButton.style('color', '#000000');
-          outResponse.response = "continue"
+          outResponse.response = "init"
           publish();
           //move on the state to display the yes/no buttons
           changeState();

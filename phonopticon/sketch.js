@@ -86,6 +86,12 @@ function drawButton(){
       });
       break;
     case 2:
+
+      testbutton = createButton('test');
+
+      testbutton.attribute('disabled','true');
+      testbutton.touchEnded(console.log('herpaderp'));
+
       //BUTTON SETUP
       if(numAns<=5){
         yesButton = createButton('Yes');

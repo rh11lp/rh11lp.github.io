@@ -36,7 +36,7 @@ var currTime = 0;
 drawRect = false;
 
 function draw() {
-  removeElements();
+  // removeElements();
   background('black');
   drawButton();
 
@@ -46,8 +46,6 @@ function draw() {
     fill(c);
     rect(0,0,width,height)
   }
-
-  background('black');
   currTime = millis();
 }
 
@@ -106,7 +104,6 @@ function drawButton(){
         noButton = createButton('No');
 
         if(currTime - timer >= 30000 ){
-          console.log('buttons are enabled');
           drawRect = false;
           timer=0;
         }

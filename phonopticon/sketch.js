@@ -41,7 +41,7 @@ function draw() {
 
   if(drawRect){
     console.log("rect")
-    var c = color(255, 204, 0, 200);
+    var c = color(255, 204, 0);
     fill(c);
     rect(0,0,width,height)
   }

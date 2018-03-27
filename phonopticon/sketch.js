@@ -36,7 +36,7 @@ var currTime = 0;
 drawRect = false;
 
 function draw() {
-  // removeElements();
+  removeElements();
   drawButton();
 
   if(drawRect){

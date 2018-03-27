@@ -35,7 +35,9 @@ var timer = 0;
 var currTime = 0;
 function draw() {
   removeElements();
+  background('black');
   drawButton();
+
   background('black');
   currTime = millis();
 }
@@ -91,12 +93,6 @@ function drawButton(){
       if(numAns<=5){
         yesButton = createButton('Yes');
         noButton = createButton('No');
-
-        if(currTime - timer >= 20000 ){
-          console.log('buttons are enabled');
-
-          timer=0;
-        }
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));

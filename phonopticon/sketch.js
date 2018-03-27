@@ -104,6 +104,12 @@ function drawButton(){
           timer=0;
         }
 
+        if(drawRect){
+          console.log("rect")
+          fill(0,0,0, 125);
+          rect(0,0,width,height)
+        }
+
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
         yesButton.style('background-color', '#000000');
@@ -138,10 +144,6 @@ function drawButton(){
           return false;
         });
 
-        if(drawRect){
-          fill(0,0,0, 190);
-          rect(0,0,width,height)
-        }
 
       } else
       {

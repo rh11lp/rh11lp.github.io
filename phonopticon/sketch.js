@@ -139,7 +139,7 @@ function drawButton(){
         });
 
         if(drawRect){
-          fill('black', 190);
+          fill(black, 190);
           rect(0,0,width,height)
         }
 

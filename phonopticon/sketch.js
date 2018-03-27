@@ -33,10 +33,19 @@ function setup() {
 
 var timer = 0;
 var currTime = 0;
+drawRect = false;
+
 function draw() {
   removeElements();
   background('black');
   drawButton();
+
+  if(drawRect){
+    console.log("rect")
+    var c = color(255, 204, 0, 200);
+    fill(c);
+    rect(0,0,width,height)
+  }
 
   background('black');
   currTime = millis();
@@ -46,8 +55,6 @@ function changeState() {
   state++;
 }
 
-
-drawRect = false;
 function drawButton(){
   switch(state){
     case 0:
@@ -102,13 +109,6 @@ function drawButton(){
           console.log('buttons are enabled');
           drawRect = false;
           timer=0;
-        }
-
-        if(drawRect){
-          console.log("rect")
-          var c = color(255, 204, 0, 200);
-          fill(c);
-          rect(0,0,width,height)
         }
 
         yesButton.position(width/20, height/10);

@@ -46,6 +46,8 @@ function changeState() {
   state++;
 }
 
+
+drawRect = false;
 function drawButton(){
   switch(state){
     case 0:
@@ -68,6 +70,7 @@ function drawButton(){
         return false;
       });
       break;
+
     case 1:
       okButton = createButton('Okay');
       okButton.position(width/20, height/8);
@@ -87,6 +90,7 @@ function drawButton(){
         return false;
       });
       break;
+
     case 2:
 
       //BUTTON SETUP
@@ -94,13 +98,18 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
+        if(currTime - timer >= 30000 ){
+          console.log('buttons are enabled');
+          drawRect = false;
+          timer=0;
+        }
+
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
         yesButton.style('background-color', '#000000');
         yesButton.style('border', '4px solid #2bec9b');
         yesButton.style('border-radius', '4px');
         yesButton.style('color', '#2bec9b');
-        // yesButton.style('font-weight', '500');
         yesButton.style('font-size', '225px');
         yesButton.touchEnded(function(){
           yesButton.style('background-color', '#2bec9b');
@@ -108,11 +117,9 @@ function drawButton(){
           outResponse.response = "yes"; publish();
           numAns++;
           timer = millis();
-          // yesButton.attribute('disabled','true');
-          // noButton.attribute('disabled','true');
+          drawRect = true;
           return false;
         });
-
 
         noButton.position(width/20, height/2);
         noButton.size(width-(width/10), height/2-(height/4));
@@ -127,14 +134,21 @@ function drawButton(){
           outResponse.response = "no"; publish();
           numAns++;
           timer = millis();
-          // yesButton.attribute('disabled','true');
-          // noButton.attribute('disabled','true');
+          drawRect = true;
           return false;
         });
 
-      } else {changeState();}
+        if(drawRect){
+          fill('black', 190);
+          rect(0,0,width,height)
+        }
 
+      } else
+      {
+        changeState();
+      }
       break;
+
     case 3:
         continueButton = createButton('Initialize');
         continueButton.position(width/20, height/8);
@@ -154,6 +168,7 @@ function drawButton(){
           return false;
         });
         break;
+
     case 4:
         tellMeHow = createButton('Tell me how');
         tellMeHow.position(width/20, height/8);
@@ -200,7 +215,7 @@ function drawButton(){
         endButton.style('border', '4px solid #2bec9b');
         endButton.style('border-radius', '4px');
         endButton.style('color', '#2bec9b');
-        endButton.style('font-size', '225px');
+        endButton.style('font-size', '115px');
         endButton.touchEnded(function(){
           endButton.style('background-color', '#2bec9b');
           endButton.style('color', '#000000');

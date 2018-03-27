@@ -106,7 +106,8 @@ function drawButton(){
 
         if(drawRect){
           console.log("rect")
-          fill(0,125);
+          var c = color(255, 204, 0, 200);
+          fill(c);
           rect(0,0,width,height)
         }
 

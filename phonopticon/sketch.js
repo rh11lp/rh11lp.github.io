@@ -40,7 +40,7 @@ function draw() {
   removeElements();
   background('black');
 
-
+drawButton();
 
   if(drawRect){
     console.log("rect")
@@ -49,7 +49,7 @@ function draw() {
     rect(0,0,width,height)
   }
   currTime = millis();
-drawButton();
+
 }
 
 function changeState() {

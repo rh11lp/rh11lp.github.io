@@ -92,12 +92,11 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        // if(currTime - timer >= 30000 ){
-        //   console.log('buttons are enabled');
-          // yesButton.attribute('disabled','false');
-          // noButton.attribute('disabled','false');
-        //   timer=0;
-        // }
+        if(currTime - timer >= 20000 ){
+          console.log('buttons are enabled');
+
+          timer=0;
+        }
 
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
@@ -108,7 +107,6 @@ function drawButton(){
         // yesButton.style('font-weight', '500');
         yesButton.style('font-size', '225px');
         yesButton.touchEnded(function(){
-          console.log('buttons about to be disabled');
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
           outResponse.response = "yes"; publish();
@@ -162,8 +160,8 @@ function drawButton(){
         break;
     case 4:
         tellMeHow = createButton('Tell me how');
-        tellMeHow.position(width/20, height/10);
-        tellMeHow.size(width-(width/10), height/2-(height/4));
+        tellMeHow.position(width/20, height/8);
+        tellMeHow.size(width-(width/10), height-(height/2));
         tellMeHow.style('background-color', '#000000');
         tellMeHow.style('border', '4px solid #2bec9b');
         tellMeHow.style('border-radius', '4px');
@@ -173,6 +171,26 @@ function drawButton(){
           tellMeHow.style('background-color', '#2bec9b');
           tellMeHow.style('color', '#000000');
           outResponse.response = "how"
+          publish();
+          //move on the state to display the yes/no buttons
+          changeState();
+          return false;
+        });
+        break;
+
+    case 5:
+        more = createButton('More info');
+        more.position(width/20, height/10);
+        more.size(width-(width/10), height/2-(height/4));
+        more.style('background-color', '#000000');
+        more.style('border', '4px solid #2bec9b');
+        more.style('border-radius', '4px');
+        more.style('color', '#2bec9b');
+        more.style('font-size', '115px')
+        more.touchEnded(function(){
+          more.style('background-color', '#2bec9b');
+          more.style('color', '#000000');
+          more.response = "more"
           publish();
           //move on the state to display the yes/no buttons
           changeState();
@@ -193,12 +211,13 @@ function drawButton(){
           outResponse.response = "end"
           publish();
           //move on the state to display the yes/no buttons
-          state = 6;
+          state = 7;
           return false;
         });
 
         break;
-    case 5:
+
+    case 6:
       //BUTTON SETUP
       endButton = createButton('End');
       endButton.position(width/20, height/8);
@@ -214,7 +233,7 @@ function drawButton(){
         outResponse.response = "end"
         publish();
         //move on the state to display the yes/no buttons
-        state = 6;
+        state = 7;
         return false;
       });
 

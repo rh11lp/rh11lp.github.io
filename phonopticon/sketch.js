@@ -7,6 +7,8 @@ var startButton;
 var state = 0; //states: 0-START 1-Y/N 2-FINAL
 var numAns = 0;
 var firstEntry = true;
+var yesButton;
+var noButton;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -33,7 +35,6 @@ function setup() {
 
 var timer = 0;
 var currTime = 0;
-var drawRect = false;
 var changingState = true;
 
 function draw() {
@@ -44,13 +45,23 @@ function draw() {
     drawButton();
   }
 
-  if(drawRect){
-    console.log("rect")
-    var c = color(255, 204, 0);
-    fill(c);
-    rect(0,0,width,height)
+  if(currTime - timer >= 3000 ){
+    console.log("ENABLING BUTTONS");
+    timer=0;
+    //reset button appearance and re-enable
+    yesButton.attribute('disabled','false');
+    yesButton.style('background-color', '#000000');
+    yesButton.style('border', '4px solid #2bec9b');
+    yesButton.style('color', '#2bec9b');
+
+    noButton.attribute('disabled','false');
+    noButton.style('background-color', '#000000');
+    noButton.style('border', '4px solid #2bec9b');
+    noButton.style('color', '#2bec9b');
   }
+
   currTime = millis();
+
 
 }
 
@@ -113,11 +124,6 @@ function drawButton(){
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
-        if(currTime - timer >= 3000 ){
-          drawRect = false;
-          timer=0;
-        }
-
         yesButton.position(width/20, height/10);
         yesButton.size(width-(width/10), height/2-(height/4));
         yesButton.style('background-color', '#000000');
@@ -130,8 +136,8 @@ function drawButton(){
           yesButton.style('color', '#000000');
           outResponse.response = "yes"; publish();
           numAns++;
+          yesButton.attribute('disabled','true');
           timer = millis();
-          drawRect = true;
           return false;
         });
 
@@ -147,8 +153,8 @@ function drawButton(){
           noButton.style('color', '#000000');
           outResponse.response = "no"; publish();
           numAns++;
+          noButton.attribute('disabled','true');
           timer = millis();
-          drawRect = true;
           return false;
         });
 

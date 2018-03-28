@@ -34,7 +34,6 @@ function setup() {
 }
 
 var timer = 0;
-var currTime = 0;
 var changingState = true;
 var yesNoButtons = false;
 
@@ -46,11 +45,10 @@ function draw() {
     drawButton();
   }
 
-  if(currTime - timer >= 3000 && yesNoButtons){
+  if(millis() - timer >= 3000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
     //reset button appearance and re-enable
     yesButton.attribute('disabled','false');
-    console.log("YES", yesButton.attribute('disabled'));
 
     yesButton.style('background-color', '#000000');
     yesButton.style('border', '4px solid #2bec9b');
@@ -60,9 +58,9 @@ function draw() {
     noButton.style('background-color', '#000000');
     noButton.style('border', '4px solid #2bec9b');
     noButton.style('color', '#2bec9b');
-  }
 
-  currTime = millis();
+    yesNoButtons = false;
+  }
 
 
 }

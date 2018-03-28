@@ -51,6 +51,8 @@ function draw() {
     timer=0;
     //reset button appearance and re-enable
     yesButton.attribute('disabled','false');
+    console.log("YES", yesButton.attribute('disabled'));
+
     yesButton.style('background-color', '#000000');
     yesButton.style('border', '4px solid #2bec9b');
     yesButton.style('color', '#2bec9b');

@@ -37,7 +37,6 @@ drawRect = false;
 
 function draw() {
 
-  removeElements();
   background('black');
 
 drawButton();
@@ -54,6 +53,7 @@ drawButton();
 
 function changeState() {
   state++;
+  removeElements();
 }
 
 function drawButton(){

@@ -36,6 +36,7 @@ function setup() {
 var timer = 0;
 var currTime = 0;
 var changingState = true;
+var yesNoButtons = false;
 
 function draw() {
 
@@ -45,7 +46,7 @@ function draw() {
     drawButton();
   }
 
-  if(currTime - timer >= 3000 ){
+  if(currTime - timer >= 3000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
     timer=0;
     //reset button appearance and re-enable
@@ -121,6 +122,7 @@ function drawButton(){
       //BUTTON SETUP
       if(numAns<=5){
         changingState = false;
+        yesNoButtons = true;
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
@@ -167,6 +169,7 @@ function drawButton(){
 
     case 3:
         changingState = false;
+        yesNoButtons = false;
         continueButton = createButton('Initialize');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));

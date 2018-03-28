@@ -33,13 +33,16 @@ function setup() {
 
 var timer = 0;
 var currTime = 0;
-drawRect = false;
+var drawRect = false;
+var changingState = true;
 
 function draw() {
 
   background('black');
 
-drawButton();
+  if(changingState){
+    drawButton();
+  }
 
   if(drawRect){
     console.log("rect")
@@ -54,12 +57,14 @@ drawButton();
 function changeState() {
   state++;
   removeElements();
+  changingState = true;
 }
 
 function drawButton(){
   switch(state){
     case 0:
       //BUTTON SETUP
+      changingState = false;
       startButton = createButton('Start');
       startButton.position(width/20, height/8);
       startButton.size(width-(width/10), height-(height/2));
@@ -80,6 +85,7 @@ function drawButton(){
       break;
 
     case 1:
+      changingState = false;
       okButton = createButton('Okay');
       okButton.position(width/20, height/8);
       okButton.size(width-(width/10), height-(height/2));
@@ -103,6 +109,7 @@ function drawButton(){
 
       //BUTTON SETUP
       if(numAns<=5){
+        changingState = false;
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
@@ -153,6 +160,7 @@ function drawButton(){
       break;
 
     case 3:
+        changingState = false;
         continueButton = createButton('Initialize');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));
@@ -173,6 +181,7 @@ function drawButton(){
         break;
 
     case 4:
+        changingState = false;
         tellMeHow = createButton('Tell me how');
         tellMeHow.position(width/20, height/8);
         tellMeHow.size(width-(width/10), height-(height/2));
@@ -193,6 +202,7 @@ function drawButton(){
         break;
 
     case 5:
+        changingState = false;
         more = createButton('More info');
         more.position(width/20, height/10);
         more.size(width-(width/10), height/2-(height/4));
@@ -233,6 +243,7 @@ function drawButton(){
 
     case 6:
       //BUTTON SETUP
+      changingState = false;
       endButton = createButton('End');
       endButton.position(width/20, height/8);
       endButton.size(width-(width/10), height-(height/2));
@@ -255,6 +266,7 @@ function drawButton(){
 
     default:
       //BUTTON SETUP
+      changingState = false;
       thankYouButton = createButton('Thank you.');
       thankYouButton.position(width/20, height/8);
       thankYouButton.size(width-(width/10), height-(height/2));

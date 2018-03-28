@@ -7,8 +7,11 @@ var startButton;
 var state = 0; //states: 0-START 1-Y/N 2-FINAL
 var numAns = 0;
 var firstEntry = true;
+
 var yesButton;
-var noButton;
+var noButton;;
+var more;
+var endButton;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -36,6 +39,7 @@ function setup() {
 var timer = 0;
 var changingState = true;
 var yesNoButtons = false;
+var moreEndButtons = false;
 
 function draw() {
 
@@ -45,12 +49,44 @@ function draw() {
     drawButton();
   }
 
-  if(millis() - timer >= 3000 && yesNoButtons){
+
+  //DEAL WITH YES/NO BUTTON DISABLES
+  if(millis() - timer >= 2000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
     //reset button appearance and re-enable
     yesNoButtons = false;
     removeElements();
     drawButton();
+  }
+
+  //DEAL WITH MORE/END BUTTON DISABLES
+  if(millis() - timer >= 1500 && moreEndButtons){
+    console.log("ENABLING BUTTONS");
+    //reset button appearance and re-enable
+    moreEndButtons = false;
+
+
+    more.style('background-color', '#000000');
+    more.style('color', '#2bec9b');
+    more.touchEnded(function(){
+      more.response = "more"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+      return false;
+    });
+
+    endButton.style('background-color', '#000000');
+    endButton.style('color', '#2bec9b');
+    endButton.touchEnded(function(){
+      outResponse.response = "end"
+      publish();
+      //move on the state to display the yes/no buttons
+      state = 7;
+      return false;
+    });
+
+
   }
 
 
@@ -206,41 +242,29 @@ function drawButton(){
 
     case 5:
         changingState = false;
+        moreEndButtons = true;
+        timer = millis();
+
         more = createButton('More info');
         more.position(width/20, height/10);
         more.size(width-(width/10), height/2-(height/4));
-        more.style('background-color', '#000000');
         more.style('border', '4px solid #2bec9b');
         more.style('border-radius', '4px');
         more.style('color', '#2bec9b');
-        more.style('font-size', '115px')
-        more.touchEnded(function(){
-          more.style('background-color', '#2bec9b');
-          more.style('color', '#000000');
-          more.response = "more"
-          publish();
-          //move on the state to display the yes/no buttons
-          changeState();
-          return false;
-        });
+        more.style('font-size', '115px');
+        more.style('background-color', '#2bec9b');
+        more.style('color', '#000000');
+
 
         endButton = createButton('End');
         endButton.position(width/20, height/2);
         endButton.size(width-(width/10), height/2-(height/4));
-        endButton.style('background-color', '#000000');
         endButton.style('border', '4px solid #2bec9b');
         endButton.style('border-radius', '4px');
-        endButton.style('color', '#2bec9b');
         endButton.style('font-size', '115px');
-        endButton.touchEnded(function(){
-          endButton.style('background-color', '#2bec9b');
-          endButton.style('color', '#000000');
-          outResponse.response = "end"
-          publish();
-          //move on the state to display the yes/no buttons
-          state = 7;
-          return false;
-        });
+        endButton.style('background-color', '#2bec9b');
+        endButton.style('color', '#000000');
+
 
         break;
 

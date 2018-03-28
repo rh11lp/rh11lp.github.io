@@ -122,7 +122,6 @@ function drawButton(){
       //BUTTON SETUP
       if(numAns<=5){
         changingState = false;
-        yesNoButtons = true;
         yesButton = createButton('Yes');
         noButton = createButton('No');
 
@@ -140,6 +139,8 @@ function drawButton(){
           numAns++;
           yesButton.attribute('disabled','true');
           timer = millis();
+
+          yesNoButtons = true;
           return false;
         });
 
@@ -157,6 +158,8 @@ function drawButton(){
           numAns++;
           noButton.attribute('disabled','true');
           timer = millis();
+
+          yesNoButtons = true;
           return false;
         });
 

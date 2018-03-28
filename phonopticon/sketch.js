@@ -132,6 +132,7 @@ function drawButton(){
         yesButton.style('color', '#2bec9b');
         yesButton.style('font-size', '225px');
         yesButton.touchEnded(function(){
+          console.log("SUP WHAT")
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
           outResponse.response = "yes"; publish();

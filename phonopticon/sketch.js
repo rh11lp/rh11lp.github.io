@@ -65,7 +65,6 @@ function draw() {
     //reset button appearance and re-enable
     moreEndButtons = false;
 
-
     more.style('background-color', '#000000');
     more.style('color', '#2bec9b');
     more.touchEnded(function(){
@@ -162,12 +161,17 @@ function drawButton(){
           console.log("SUP WHAT")
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
+          noButton.style('background-color', '#2bec9b');
+          noButton.style('color', '#000000');
+
           outResponse.response = "yes"; publish();
           numAns++;
-          yesButton.attribute('disabled','true');
-          timer = millis();
 
+          yesButton.attribute('disabled','true');
+          noButton.attribute('disabled','true');
+          timer = millis();
           yesNoButtons = true;
+
           return false;
         });
 
@@ -181,12 +185,17 @@ function drawButton(){
         noButton.touchEnded(function(){
           noButton.style('background-color', '#2bec9b');
           noButton.style('color', '#000000');
+          yesButton.style('background-color', '#2bec9b');
+          yesButton.style('color', '#000000');
+
           outResponse.response = "no"; publish();
           numAns++;
-          noButton.attribute('disabled','true');
-          timer = millis();
 
+          noButton.attribute('disabled','true');
+          yesButton.attribute('disabled','true');
+          timer = millis();
           yesNoButtons = true;
+          
           return false;
         });
 

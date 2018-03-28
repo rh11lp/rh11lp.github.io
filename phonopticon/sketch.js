@@ -48,7 +48,6 @@ function draw() {
 
   if(currTime - timer >= 3000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
-    timer=0;
     //reset button appearance and re-enable
     yesButton.attribute('disabled','false');
     console.log("YES", yesButton.attribute('disabled'));

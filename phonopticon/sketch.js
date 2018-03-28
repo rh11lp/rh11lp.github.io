@@ -51,7 +51,7 @@ function draw() {
 
 
   //DEAL WITH YES/NO BUTTON DISABLES
-  if(millis() - timer >= 2000 && yesNoButtons){
+  if(millis() - timer >= 20000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
     //reset button appearance and re-enable
     yesNoButtons = false;
@@ -60,7 +60,7 @@ function draw() {
   }
 
   //DEAL WITH MORE/END BUTTON DISABLES
-  if(millis() - timer >= 1500 && moreEndButtons){
+  if(millis() - timer >= 15000 && moreEndButtons){
     console.log("ENABLING BUTTONS");
     //reset button appearance and re-enable
     moreEndButtons = false;
@@ -195,7 +195,7 @@ function drawButton(){
           yesButton.attribute('disabled','true');
           timer = millis();
           yesNoButtons = true;
-          
+
           return false;
         });
 

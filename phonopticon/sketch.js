@@ -48,18 +48,9 @@ function draw() {
   if(millis() - timer >= 3000 && yesNoButtons){
     console.log("ENABLING BUTTONS");
     //reset button appearance and re-enable
-    yesButton.attribute('disabled','false');
-
-    yesButton.style('background-color', '#000000');
-    yesButton.style('border', '4px solid #2bec9b');
-    yesButton.style('color', '#2bec9b');
-
-    noButton.attribute('disabled','false');
-    noButton.style('background-color', '#000000');
-    noButton.style('border', '4px solid #2bec9b');
-    noButton.style('color', '#2bec9b');
-
     yesNoButtons = false;
+    removeElements();
+    drawButton();
   }
 
 

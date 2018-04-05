@@ -164,7 +164,8 @@ function drawButton(){
           noButton.style('background-color', '#2bec9b');
           noButton.style('color', '#000000');
 
-          outResponse.response = "yes"; publish();
+          outResponse.response = "yes";
+          publish();
           numAns++;
 
           yesButton.attribute('disabled','true');
@@ -188,13 +189,16 @@ function drawButton(){
           yesButton.style('background-color', '#2bec9b');
           yesButton.style('color', '#000000');
 
-          outResponse.response = "no"; publish();
+          outResponse.response = "no";
+          publish();
           numAns++;
 
-          noButton.attribute('disabled','true');
-          yesButton.attribute('disabled','true');
           timer = millis();
           yesNoButtons = true;
+
+          noButton.removeAttribute('disabled','disabled');
+          yesButton.removeAttribute('disabled','disabled');
+
 
           return false;
         });

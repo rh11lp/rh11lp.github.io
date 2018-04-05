@@ -103,7 +103,9 @@ function draw() {
       outResponse.response = "end"
       publish();
       //move on the state to display the yes/no buttons
-      state = 7;
+      state = 7;  
+      removeElements();
+      changingState = true;
       console.log("state", state)
       return false;
     });

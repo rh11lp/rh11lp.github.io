@@ -49,6 +49,28 @@ function draw() {
     drawButton();
   }
 
+  if(yesNoButtons){
+    removeElements();
+
+    yesButton = createButton('Yes');
+    noButton = createButton('No');
+    
+    yesButton.position(width/20, height/10);
+    yesButton.size(width-(width/10), height/2-(height/4));
+    yesButton.style('border', '4px solid #2bec9b');
+    yesButton.style('border-radius', '4px');
+    yesButton.style('font-size', '225px');
+    yesButton.style('background-color', '#2bec9b');
+    yesButton.style('color', '#000000');
+
+    noButton.position(width/20, height/2);
+    noButton.size(width-(width/10), height/2-(height/4));
+    noButton.style('border', '4px solid #2bec9b');
+    noButton.style('border-radius', '4px');
+    noButton.style('font-size', '225px');
+    noButton.style('background-color', '#2bec9b');
+    noButton.style('color', '#000000');
+  }
 
   //DEAL WITH YES/NO BUTTON DISABLES
   if(millis() - timer >= 20000 && yesNoButtons){

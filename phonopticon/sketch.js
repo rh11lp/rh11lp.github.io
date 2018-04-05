@@ -54,7 +54,7 @@ function draw() {
 
     yesButton = createButton('Yes');
     noButton = createButton('No');
-    
+
     yesButton.position(width/20, height/10);
     yesButton.size(width-(width/10), height/2-(height/4));
     yesButton.style('border', '4px solid #2bec9b');
@@ -104,6 +104,7 @@ function draw() {
       publish();
       //move on the state to display the yes/no buttons
       state = 7;
+      console.log("state", state)
       return false;
     });
 
@@ -328,6 +329,7 @@ function drawButton(){
 
     default:
       //BUTTON SETUP
+      console.log("HELLO")
       changingState = false;
       thankYouButton = createButton('Thank you.');
       thankYouButton.position(width/20, height/8);

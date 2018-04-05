@@ -104,6 +104,9 @@ function draw() {
       publish();
       //move on the state to display the yes/no buttons
       state = 7;
+      removeElements();
+      changingState = true;
+
       return false;
     });
 

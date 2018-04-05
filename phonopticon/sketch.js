@@ -168,8 +168,8 @@ function drawButton(){
           publish();
           numAns++;
 
-          yesButton.attribute('disabled','true');
-          noButton.attribute('disabled','true');
+          yesButton.attribute('disabled','disabled');
+          noButton.attribute('disabled','disabled');
           timer = millis();
           yesNoButtons = true;
 

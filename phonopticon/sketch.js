@@ -10,11 +10,8 @@ var firstEntry = true;
 
 var yesButton;
 var noButton;;
-
 var more;
 var endButton;
-
-var startButton;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -43,7 +40,6 @@ var timer = 0;
 var changingState = true;
 var yesNoButtons = false;
 var moreEndButtons = false;
-var startButtonToggle = false;
 
 function draw() {
 
@@ -115,23 +111,6 @@ function draw() {
     });
   }
 
-  if(millis() - timer >= 15000 && startButtonToggle){
-    console.log("ENABLING BUTTONS");
-    //reset button appearance and re-enable
-    startButtonToggle = false;
-
-    startButton.style('background-color', '#000000');
-    startButton.style('color', '#2bec9b');
-
-    startButton.touchEnded(function(){
-      startButton.response = "start"
-      publish();
-      //move on the state to display the yes/no buttons
-      changeState();
-      return false;
-    });
-  }
-
 
 }
 
@@ -146,17 +125,23 @@ function drawButton(){
     case 0:
       //BUTTON SETUP
       changingState = false;
-      startButtonToggle = true;
       startButton = createButton('Start');
       startButton.position(width/20, height/8);
       startButton.size(width-(width/10), height-(height/2));
+      startButton.style('background-color', '#000000');
       startButton.style('border', '4px solid #2bec9b');
       startButton.style('border-radius', '4px');
       startButton.style('color', '#2bec9b');
-      startButton.style('font-size', '225px');
-      startButton.style('background-color', '#2bec9b');
-      startButton.style('color', '#000000');
-
+      startButton.style('font-size', '225px')
+      startButton.touchEnded(function(){
+        startButton.style('background-color', '#2bec9b');
+        startButton.style('color', '#000000');
+        outResponse.response = "start"
+        publish();
+        //move on the state to display the yes/no buttons
+        changeState();
+        return false;
+      });
       break;
 
     case 1:

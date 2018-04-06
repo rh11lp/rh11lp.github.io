@@ -12,6 +12,7 @@ var yesButton;
 var noButton;;
 var more;
 var endButton;
+var okButton;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -40,6 +41,7 @@ var timer = 0;
 var changingState = true;
 var yesNoButtons = false;
 var moreEndButtons = false;
+var okEnable = false;
 
 function draw() {
 
@@ -111,6 +113,21 @@ function draw() {
     });
   }
 
+  if(millis() - timer >= 500 && okEnable){
+    console.log("ENABLING BUTTONS");
+    //reset button appearance and re-enable
+    okEnable = false;
+
+    okButton.touchEnded(function(){
+      okButton.style('background-color', '#2bec9b');
+      okButton.style('color', '#000000');
+      outResponse.response = "okay"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+      return false;
+    });
+  }
 
 }
 
@@ -145,7 +162,10 @@ function drawButton(){
       break;
 
     case 1:
+      okPause = true;
       changingState = false;
+      timer = millis();
+
       okButton = createButton('Okay');
       okButton.position(width/20, height/8);
       okButton.size(width-(width/10), height-(height/2));
@@ -154,15 +174,7 @@ function drawButton(){
       okButton.style('border-radius', '4px');
       okButton.style('color', '#2bec9b');
       okButton.style('font-size', '225px')
-      okButton.touchEnded(function(){
-        okButton.style('background-color', '#2bec9b');
-        okButton.style('color', '#000000');
-        outResponse.response = "okay"
-        publish();
-        //move on the state to display the yes/no buttons
-        changeState();
-        return false;
-      });
+
       break;
 
     case 2:

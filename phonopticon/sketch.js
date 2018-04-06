@@ -113,6 +113,7 @@ function draw() {
     });
   }
 
+  console.log("okenable", okEnable, " - ", millis() - timer >= 500);
   if(millis() - timer >= 500 && okEnable){
     console.log("ENABLING OK");
     //reset button appearance and re-enable
@@ -162,6 +163,7 @@ function drawButton(){
       break;
 
     case 1:
+      console.log("OK STATE");
       okPause = true;
       changingState = false;
       timer = millis();

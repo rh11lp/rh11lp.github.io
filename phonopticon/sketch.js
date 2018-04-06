@@ -1,3 +1,4 @@
+//pubnub stuff
 var pubnubError = true;
 var myUserID;
 var outResponse = {uuid: 0};
@@ -8,11 +9,26 @@ var state = 0; //states: 0-START 1-Y/N 2-FINAL
 var numAns = 0;
 var firstEntry = true;
 
+//buttons
 var yesButton;
 var noButton;;
 var more;
 var endButton;
 var okButton;
+var continueButton;
+var tellMeHow;
+var endButton;
+
+//timer stuff
+var timer = 0;
+var changingState = true;
+var yesNoButtons = false;
+var moreEndButtons = false;
+var okEnable = false;
+var initializeEnable = false;
+var tellMeEnable = false;
+var endEnable = false;
+
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -37,11 +53,7 @@ function setup() {
 
 }
 
-var timer = 0;
-var changingState = true;
-var yesNoButtons = false;
-var moreEndButtons = false;
-var okEnable = false;
+
 
 function draw() {
 
@@ -122,6 +134,54 @@ function draw() {
       okButton.style('background-color', '#2bec9b');
       okButton.style('color', '#000000');
       outResponse.response = "okay"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+      return false;
+    });
+  }
+
+  if(millis() - timer >= 500 && initializeEnable){
+    console.log("ENABLING OK");
+    //reset button appearance and re-enable
+    initializeEnable = false;
+
+    continueButton.touchEnded(function(){
+      continueButton.style('background-color', '#2bec9b');
+      continueButton.style('color', '#000000');
+      outResponse.response = "init"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+      return false;
+    });
+  }
+
+  if(millis() - timer >= 500 && tellMeEnable){
+    console.log("ENABLING OK");
+    //reset button appearance and re-enable
+    tellMeEnable = false;
+
+    tellMeHow.touchEnded(function(){
+      tellMeHow.style('background-color', '#2bec9b');
+      tellMeHow.style('color', '#000000');
+      outResponse.response = "how"
+      publish();
+      //move on the state to display the yes/no buttons
+      changeState();
+      return false;
+    });
+  }
+
+  if(millis() - timer >= 500 && endEnable){
+    console.log("ENABLING OK");
+    //reset button appearance and re-enable
+    endEnable = false;
+
+    endButton.touchEnded(function(){
+      endButton.style('background-color', '#2bec9b');
+      endButton.style('color', '#000000');
+      outResponse.response = "end"
       publish();
       //move on the state to display the yes/no buttons
       changeState();
@@ -249,6 +309,9 @@ function drawButton(){
     case 3:
         changingState = false;
         yesNoButtons = false;
+        timer = millis();
+        initializeEnable = true;
+
         continueButton = createButton('Initialize');
         continueButton.position(width/20, height/8);
         continueButton.size(width-(width/10), height-(height/2));
@@ -257,19 +320,14 @@ function drawButton(){
         continueButton.style('border-radius', '4px');
         continueButton.style('color', '#2bec9b');
         continueButton.style('font-size', '115px')
-        continueButton.touchEnded(function(){
-          continueButton.style('background-color', '#2bec9b');
-          continueButton.style('color', '#000000');
-          outResponse.response = "init"
-          publish();
-          //move on the state to display the yes/no buttons
-          changeState();
-          return false;
-        });
+
         break;
 
     case 4:
         changingState = false;
+        timer = millis();
+        tellMeEnable = true;
+
         tellMeHow = createButton('Tell me how');
         tellMeHow.position(width/20, height/8);
         tellMeHow.size(width-(width/10), height-(height/2));
@@ -278,15 +336,7 @@ function drawButton(){
         tellMeHow.style('border-radius', '4px');
         tellMeHow.style('color', '#2bec9b');
         tellMeHow.style('font-size', '115px')
-        tellMeHow.touchEnded(function(){
-          tellMeHow.style('background-color', '#2bec9b');
-          tellMeHow.style('color', '#000000');
-          outResponse.response = "how"
-          publish();
-          //move on the state to display the yes/no buttons
-          changeState();
-          return false;
-        });
+
         break;
 
     case 5:
@@ -320,6 +370,10 @@ function drawButton(){
     case 6:
       //BUTTON SETUP
       changingState = false;
+
+      timer = millis();
+      endEnable = true;
+
       endButton = createButton('End');
       endButton.position(width/20, height/8);
       endButton.size(width-(width/10), height-(height/2));
@@ -328,15 +382,7 @@ function drawButton(){
       endButton.style('border-radius', '4px');
       endButton.style('color', '#2bec9b');
       endButton.style('font-size', '225px');
-      endButton.touchEnded(function(){
-        endButton.style('background-color', '#2bec9b');
-        endButton.style('color', '#000000');
-        outResponse.response = "end"
-        publish();
-        //move on the state to display the yes/no buttons
-        changeState();
-        return false;
-      });
+
 
       break;
 

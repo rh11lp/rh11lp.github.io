@@ -153,7 +153,7 @@ function drawButton(){
       startButton.style('border', '4px solid #2bec9b');
       startButton.style('border-radius', '4px');
       startButton.style('color', '#2bec9b');
-      startButton.style('font-size', '225');
+      startButton.style('font-size', '225px');
       startButton.style('background-color', '#2bec9b');
       startButton.style('color', '#000000');
 

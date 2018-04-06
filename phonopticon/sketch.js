@@ -115,8 +115,8 @@ function draw() {
 }
 
 function changeState() {
-  state++;
   removeElements();
+  state++;
   changingState = true;
 }
 

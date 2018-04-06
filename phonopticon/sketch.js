@@ -114,7 +114,7 @@ function draw() {
   }
 
   if(millis() - timer >= 500 && okEnable){
-    console.log("ENABLING BUTTONS");
+    console.log("ENABLING OK");
     //reset button appearance and re-enable
     okEnable = false;
 

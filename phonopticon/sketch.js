@@ -341,7 +341,7 @@ function drawButton(){
         timer = millis();
         tellMeEnable = true;
 
-        tellMeHow = createButton('Tell me how');
+        tellMeHow = createButton('End');
         tellMeHow.position(width/20, height/8);
         tellMeHow.size(width-(width/10), height-(height/2));
         tellMeHow.style('background-color', '#000000');

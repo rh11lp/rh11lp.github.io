@@ -23,6 +23,7 @@ var endButton;
 var timer = 0;
 var changingState = true;
 var yesNoButtons = false;
+var delayYesNo = false;
 var moreEndButtons = false;
 var okEnable = false;
 var initializeEnable = false;
@@ -54,13 +55,19 @@ function setup() {
 }
 
 
+var canDraw = true;
 
 function draw() {
 
   background('black');
 
   if(changingState){
-    drawButton();
+    if(millis() - timer >= 200 && state == 2 && !canDraw){
+      drawButton();
+    }
+    if(canDraw){
+      drawButton();
+    }
   }
 
   if(yesNoButtons){
@@ -137,6 +144,10 @@ function draw() {
       publish();
       //move on the state to display the yes/no buttons
       changeState();
+
+      timer = millis();
+      canDraw = false;
+
       return false;
     });
   }
@@ -195,6 +206,7 @@ function changeState() {
   removeElements();
   state++;
   changingState = true;
+  canDraw = true;
 }
 
 function drawButton(){
@@ -325,6 +337,7 @@ function drawButton(){
 
     case 4:
         changingState = false;
+
         timer = millis();
         tellMeEnable = true;
 
@@ -342,6 +355,7 @@ function drawButton(){
     case 5:
         changingState = false;
         moreEndButtons = true;
+
         timer = millis();
 
         more = createButton('More info');

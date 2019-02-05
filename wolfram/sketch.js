@@ -73,7 +73,7 @@ function showResult() {
   console.log("Showing results"); //debugging
   if(myRec.resultValue==true) { //if there's a recording
     console.log(myRec.resultString) //debugging
-    sendText = myRec.resultValue;
+    sendText = myRec.resultString
     sendTheMessage();
   }
 }

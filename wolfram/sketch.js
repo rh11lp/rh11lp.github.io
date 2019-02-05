@@ -27,7 +27,7 @@ var returnedAnswer = [];
 var channelName = "wolfram";
 
 var myRec = new p5.SpeechRec(); // speech recognition object (will prompt for mic access)
-
+var mySpeech = new p5.Speech();
 
 function setup()
 {
@@ -117,6 +117,7 @@ console.log(inMessage);  //log the entire response
     textSize(20);
     text(inMessage.message.answer, 5, height/2);
     returnedAnswer=inMessage.message.answer.split(" ");
+    mySpeech.speak(returnedAnswer);
 
 }
 

@@ -73,6 +73,7 @@ function showResult() {
   console.log("Showing results"); //debugging
   if(myRec.resultValue==true) { //if there's a recording
     console.log(myRec.resultString) //debugging
+    sendText = myRec.resultValue;
     sendTheMessage();
   }
 }
@@ -96,7 +97,7 @@ function sendTheMessage() {
       channel: channelName,
       message:
       {
-        text: myRec.resultValue       //text: is the message parameter the function is expecting
+        text: sendText       //text: is the message parameter the function is expecting
       }
     });
 

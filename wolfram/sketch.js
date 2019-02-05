@@ -2,6 +2,8 @@
  * Ubiquitous Computing - Digital Futures, OCAD University
  * Kate Hartman / Nick Puckett
  *
+ * p5.speech adaptation by Roxanne Henry
+ *
  * Uses a PubNub function to query the Wolfram Conversation API
  *
  *
@@ -110,14 +112,13 @@ function readIncoming(inMessage) //when new data comes in it triggers this funct
 console.log(inMessage);  //log the entire response
                           //the message parameter to look for is answer
 
-
-    background(255);
-    noStroke();
-    fill(0);  //read the color values from the message
-    textSize(20);
-    text(inMessage.message.answer, 5, height/2);
-    returnedAnswer=inMessage.message.answer.split(" ");
-    mySpeech.speak(returnedAnswer);
+  background(255);
+  noStroke();
+  fill(0);  //read the color values from the message
+  textSize(20);
+  text(inMessage.message.answer, 5, height/2);
+  returnedAnswer=inMessage.message.answer.split(" ");
+  mySpeech.speak(returnedAnswer);
 
 }
 

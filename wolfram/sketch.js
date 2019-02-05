@@ -53,13 +53,13 @@ function setup()
   dataServer.addListener({ message: readIncoming})
   dataServer.subscribe({channels: [channelName]});
 
-  //create the text fields for the message to be sent
-  sendText = createInput();
-  sendText.position(5,height);
-
-  sendButton = createButton('Ask a Question');
-  sendButton.position(sendText.x + sendText.width,height);
-  sendButton.mousePressed(sendTheMessage);
+  ////create the text fields for the message to be sent
+  // sendText = createInput();
+  // sendText.position(5,height);
+  //
+  // sendButton = createButton('Ask a Question');
+  // sendButton.position(sendText.x + sendText.width,height);
+  // sendButton.mousePressed(sendTheMessage);
 
 }
 
@@ -71,9 +71,10 @@ function draw()
 
 function showResult() {
   console.log("Showing results"); //debugging
- if(myRec.resultValue==true) { //if there's a recording
-   console.log(myRec.resultString) //debugging
- }
+  if(myRec.resultValue==true) { //if there's a recording
+    console.log(myRec.resultString) //debugging
+    sendTheMessage();
+  }
 }
 
 //start recording again if you stop recording... stop stopping... honestly............
@@ -95,7 +96,7 @@ function sendTheMessage() {
       channel: channelName,
       message:
       {
-        text: sendText.value()       //text: is the message parameter the function is expecting
+        text: myRec.resultValue       //text: is the message parameter the function is expecting
       }
     });
 

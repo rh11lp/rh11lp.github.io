@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "spatial-box-231505",
+  "private_key_id": "6f70f0081b19fb7fc6011e67a6249e56ee65c14f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCXd4S4vfuciBEN\nUVcxMTxF2ojektWKWOfhCXJT6ziXRgqwlFQ7l3HwqRwpQL40V43wn665siD6Olbc\n4bZdk5jt2Y1hu5wS0kAJf7LmZkZCPP1R7SAmAyIdHMIrilERrlEwpLDErFAkCeso\nPu+6jG7J2Q6XalpjHgBAkL+RK/5wwIIXRT8ISjU4TB3eoPWmDhNyIW+8WAaSevEK\nZ6L7ZSK14qyaQUoUFzlJ3hqc6s4l9B49E1ZQfycwR4c/5ui0ze1Oa92i1O6GCH75\nwMLplDHGGO3iY9t7g/rqOmjC+C16sKp9gnJEbL3l/KeT8T1RFREAJB8g/FWzxCPU\nsmhGT/s3AgMBAAECggEALpghN3WWD86ZtEeX83WKbZCu9w0jbJYx6ruttFwRQhPV\nWQGgMd7COb7D/3q/qDlg3Cs7JDvEQkWtD/DNWVb8vfplMDH27qFH+sQSRCclKN47\nLTctYxQmq977akp36uD9b+HR0QaS9qsocG5/75qgwC4p+3FHkeMaP8Jnc+CdOpC8\nnnbPsBEfVQnsCv9WFhNeAHXGdme7lxLXpl7/9P5vMZOFo8UfqQbzWmv7U0bDahus\no6oIDavuhl4OuzQnkAbYK9SF8lGaME2nc4CUB48ptt53+co2eb6fL1bGk7abqm9Y\nH21nDB70bVf+TKR4kZRd0VKhZmIcpmnOK/I2MhFaZQKBgQDLGWcB3pTgOQdY8q+X\npS/XKM1q5WD5H4a8Z6v+JTE68Z6ELZhFN8ToyDO0WWD8eag+kAmaruNmnkaiitUD\nSxtqOJkMR3gpNZaVD7IKaw1MENAF7PayxKrQjEC6VQsAUiNGUs+5njL+g1dHh9iP\nZjqSqHeh+GAAoZcTpqeMKmCeuwKBgQC+60kMCriVgf4IjyCsQ0x9+dQHh4eVFHL+\nR1ymz7WEz2zVYaxLxXArUl4HrCNHi3U9sdeSm4UVaKuN+Dmpx8J4loqp5+khC+cT\naoE2cecQGA+bnuywYzrnVZa2pSxtWmRoTYw4kdUYc81Y05/hMrGdAYfSADSGYjz0\nK8b8llmztQKBgDPEBb00Pj3oSzcgpCDCua7dd34HePAGWREsW2orkKC1dPG7rVP3\nIvkyDfupzE6Ns5Q+ojQK32sIbHiBakmsmxA33MqEbNwUDI1xsq91Ga6JmnvoKfjm\np6MAHH9hrawnQ1ZpRQjKibTVRSm2NjxWkhdPWS6vX8jJZvhbQdk38+iBAoGAaJr5\n1wM4x5IF4iKpwDjPfGaZ6dY0T1Z4+yGWfj9oMXCFLRTrFkkDgHkM1B9Y5SZgAoGi\nn81eSbCj7pGG5qNwximVqCpM7bJb1aORUIdwFr1YL+gPv0VfTMj0XvZ5NSFFynBS\n19vvagppBLZO71CbSG9CP6mlHcxNoWsrB9JJK9ECgYEAgZJyydtBNcDXlCHGMla1\nOnXwh1FJMidSz/PR0UIpHm6a8pOiUL1OkIjwOjeCK7o9i4nKA0/cpif4IsGNmOdk\nrzvKg+umQS/7+B+HJPKOkB9Rhg6SEux7GSXKrPtAp6DFFNzMtLwQXzF/MHiVnacV\nz86c1ui91jc/klWRMVBU2Yk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "accessscore@spatial-box-231505.iam.gserviceaccount.com",
+  "client_id": "113316464684566670530",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/accessscore%40spatial-box-231505.iam.gserviceaccount.com"
+}

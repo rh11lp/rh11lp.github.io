@@ -12,8 +12,6 @@
 
 var AIO_KEY = "1cbc86563dfa426fbf1ec2d3fe157d83";//get this from your account
 var channelGroup = "ubiComp";
-var channel1 = "position1";
-var channel2 = "position2";
 
 
 // the snake is divided into small segments, which are drawn and edited on each 'draw' call
@@ -134,6 +132,7 @@ function checkSnakeCollision() {
  I add the last segment again at the tail, thereby extending the tail)
 */
 function checkForFruit() {
+	color(250, 0, 0);
   point(xFruit, yFruit);
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
     var prevScore = parseInt(scoreElem.html().substring(8));

@@ -110,7 +110,7 @@ function checkGameStatus() {
     noLoop();
     var scoreVal = parseInt(scoreElem.html().substring(8));
     scoreElem.html('Game ended! Your score was : ' + scoreVal);
-		sendData();
+		sendData(scoreVal);
   }
 }
 
@@ -181,10 +181,10 @@ function keyPressed() {
   }
 }
 
-function sendData()
+function sendData(score)
 	{
 
-        var url = ("https://io.adafruit.com/api/v1/groups/"+channelGroup+"/send.json?x-aio-key=" + AIO_KEY + "&"+"score"+"=" + scoreVal);
+        var url = ("https://io.adafruit.com/api/v1/groups/"+channelGroup+"/send.json?x-aio-key=" + AIO_KEY + "&"+"score"+"=" + score);
         var oReq = new XMLHttpRequest()
         oReq.addEventListener("load", reqListener)
         oReq.open("POST", url)

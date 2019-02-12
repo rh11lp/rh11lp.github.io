@@ -108,7 +108,7 @@ function checkGameStatus() {
     noLoop();
     var scoreVal = parseInt(scoreElem.html().substring(8));
 		if(scoreVal >= 10){
-	    scoreElem.html('Game ended! Your score was : ' + scoreVal + 'Congrats! Your high score has been recorded!');
+	    scoreElem.html('Game ended! Your score was : ' + scoreVal + '\nCongrats! Your high score has been recorded!');
 		}else{
 	    scoreElem.html('Game ended! Your score was : ' + scoreVal);
 		}

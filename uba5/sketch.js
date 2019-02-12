@@ -4,6 +4,9 @@
  *
  * Allows you to send data to Adafruit IO + IFTTT
  *
+ * Roxanne Henry
+ * Snake game from p5 tutorials @ https://p5js.org/examples/interaction-snake-game.html
+ *
  */
 
 
@@ -107,6 +110,7 @@ function checkGameStatus() {
     noLoop();
     var scoreVal = parseInt(scoreElem.html().substring(8));
     scoreElem.html('Game ended! Your score was : ' + scoreVal);
+		sendData();
   }
 }
 
@@ -154,37 +158,28 @@ function updateFruitCoordinates() {
 
 function keyPressed() {
   switch (keyCode) {
-    case 74:
+    case 100:
       if (direction != 'right') {
         direction = 'left';
       }
       break;
-    case 76:
+    case 97:
       if (direction != 'left') {
         direction = 'right';
       }
       break;
-    case 73:
+    case 115:
       if (direction != 'down') {
         direction = 'up';
       }
       break;
-    case 75:
+    case 119:
       if (direction != 'up') {
         direction = 'down';
       }
       break;
   }
 }
-
-
-function mousePressed()
-{
-	sendData();
-
-}
-
-
 
 function sendData()
 	{

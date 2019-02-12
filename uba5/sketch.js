@@ -28,6 +28,7 @@ var yCor = [];
 var xFruit = 0;
 var yFruit = 0;
 var scoreElem;
+var gratsElem;
 
 function setup() {
   scoreElem = createDiv('Score = 0');
@@ -107,10 +108,13 @@ function checkGameStatus() {
       checkSnakeCollision()) {
     noLoop();
     var scoreVal = parseInt(scoreElem.html().substring(8));
+		scoreElem.html('Game ended! Your score was : ' + scoreVal);
 		if(scoreVal >= 10){
-	    scoreElem.html('Game ended! Your score was : ' + scoreVal + '\nCongrats! Your high score has been recorded!');
-		}else{
-	    scoreElem.html('Game ended! Your score was : ' + scoreVal);
+			gratsElem = createDiv('Score = 0');
+		  gratsElem.position(20, 40);
+		  gratsElem.id = 'grats';
+		  gratsElem.style('color', 'white');
+	    gratsElem.html('Congrats! Your high score has been recorded!');
 		}
 		sendData(scoreVal);
   }

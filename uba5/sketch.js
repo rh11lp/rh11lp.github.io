@@ -107,11 +107,9 @@ function checkGameStatus() {
       checkSnakeCollision()) {
     noLoop();
     var scoreVal = parseInt(scoreElem.html().substring(8));
-		if(scoreVal >=10){
-
+		if(scoreVal >= 10){
 	    scoreElem.html('Game ended! Your score was : ' + scoreVal + 'Congrats! Your high score has been recorded!');
 		}else{
-
 	    scoreElem.html('Game ended! Your score was : ' + scoreVal);
 		}
 		sendData(scoreVal);
@@ -137,7 +135,7 @@ function checkSnakeCollision() {
  and just insert the tail segment again at the start of the array (basically
  I add the last segment again at the tail, thereby extending the tail)
 */
-function checkForFruit() {\
+function checkForFruit() {
   point(xFruit, yFruit);
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
     var prevScore = parseInt(scoreElem.html().substring(8));
